@@ -1,0 +1,29 @@
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
+import type { Service } from "@/data/services";
+
+export function ServiceCard({ service, index = 0 }: { service: Service; index?: number }) {
+  return (
+    <Link
+      href={`/services/${service.slug}`}
+      className="group flex flex-col overflow-hidden border border-border bg-background transition-colors duration-300 hover:border-accent/60"
+    >
+      <PlaceholderImage
+        label={service.placeholderTag}
+        category={service.placeholderCategory}
+        ratio="aspect-[4/3]"
+        index={index}
+        src={service.image}
+      />
+      <div className="flex flex-1 flex-col gap-3 p-6">
+        <h3 className="font-display text-xl font-medium tracking-tight">{service.title}</h3>
+        <p className="flex-1 text-sm leading-relaxed text-muted">{service.shortDescription}</p>
+        <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground transition-colors group-hover:text-accent">
+          Learn More
+          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden />
+        </span>
+      </div>
+    </Link>
+  );
+}
