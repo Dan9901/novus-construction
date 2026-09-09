@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { FacebookIcon, InstagramIcon, LinkedInIcon } from "@/components/icons/SocialIcons";
+import { FacebookIcon, GoogleIcon, InstagramIcon, LinkedInIcon } from "@/components/icons/SocialIcons";
 import { navLinks } from "@/data/nav";
 import { services } from "@/data/services";
 import { siteConfig } from "@/data/site-config";
 import { Logo } from "./Logo";
 
 const socialIcons = {
+  Google: GoogleIcon,
   Instagram: InstagramIcon,
   Facebook: FacebookIcon,
   LinkedIn: LinkedInIcon,
@@ -33,6 +34,8 @@ export function Footer() {
                   <a
                     key={item.label}
                     href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={item.label}
                     className="flex h-9 w-9 items-center justify-center border border-background/20 text-background/70 transition-colors hover:border-accent hover:text-accent"
                   >

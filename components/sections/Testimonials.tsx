@@ -3,6 +3,8 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
+import { GoogleIcon } from "@/components/icons/SocialIcons";
+import { siteConfig } from "@/data/site-config";
 import { testimonials } from "@/data/testimonials";
 
 export function Testimonials() {
@@ -37,6 +39,20 @@ export function Testimonials() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={160}>
+          <div className="mt-10 flex justify-center">
+            <a
+              href={siteConfig.googleProfileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-accent"
+            >
+              <GoogleIcon className="h-4 w-4" />
+              Read more reviews on Google
+            </a>
+          </div>
+        </Reveal>
       </Container>
     </Section>
   );
