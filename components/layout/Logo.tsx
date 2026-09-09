@@ -15,7 +15,7 @@ export function Logo({ className, tone = "default" }: { className?: string; tone
         width={113}
         height={61}
         priority
-        className="h-12 w-auto sm:h-14"
+        className="h-14 w-auto sm:h-16"
       />
     </Link>
   );
