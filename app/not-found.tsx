@@ -14,8 +14,7 @@ export default function NotFound() {
         Page Not Found
       </h1>
       <p className="mt-4 max-w-md text-base leading-relaxed text-muted">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. The page you&apos;re looking for
-        doesn&apos;t exist or may have moved.
+        The page you&apos;re looking for doesn&apos;t exist or may have moved.
       </p>
       <div className="mt-8 flex flex-col gap-4 sm:flex-row">
         <Button href="/">Back to Homepage</Button>

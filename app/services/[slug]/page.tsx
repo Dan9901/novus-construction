@@ -107,8 +107,8 @@ export default async function ServiceDetailPage({
                     Start Your {service.title} Project
                   </h2>
                   <p className="mt-3 text-sm leading-relaxed text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tell us about your
-                    project and we&apos;ll come back to you with a clear, no-obligation quote.
+                    Tell us about your project and we&apos;ll come back to you with a clear,
+                    no-obligation quote.
                   </p>
                   <div className="mt-6 flex flex-col gap-3">
                     <Button href="/contact" className="w-full justify-center">

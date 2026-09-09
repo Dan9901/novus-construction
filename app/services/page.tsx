@@ -10,7 +10,7 @@ import { services } from "@/data/services";
 export const metadata: Metadata = {
   title: "Construction Services",
   description:
-    "New builds, extensions, renovations, refurbishments, kitchens, bathrooms and general building services from Novus Construction.",
+    "Design and planning, construction services, kitchen fit-outs, structural engineering and SEAI grant works from Novus Construction Ltd.",
 };
 
 export default function ServicesPage() {
@@ -19,7 +19,7 @@ export default function ServicesPage() {
       <PageHeader
         eyebrow="What We Do"
         title="Construction Services"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, from ground-up builds to the smallest finishing details."
+        description="In restoring the past and building the future, we have a wealth of services — here is an introduction to all of them."
       />
 
       <Section>

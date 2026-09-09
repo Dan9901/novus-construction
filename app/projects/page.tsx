@@ -18,7 +18,7 @@ export default function ProjectsPage() {
       <PageHeader
         eyebrow="Our Work"
         title="Recent Projects"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. A selection of new builds, extensions, renovations and interiors completed across Ireland."
+        description="Our work is art, but we can't let you into all of our customers' homes. Thankfully we've been given permission to showcase our attention to detail and perfection in everything we do — have a browse and be inspired."
       />
 
       <Section>

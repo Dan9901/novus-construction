@@ -5,23 +5,23 @@ export type Value = {
 
 export const values: Value[] = [
   {
-    title: "Integrity",
+    title: "Client-Led Design",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+      "The client is always in focus when we design, create and build. We only build what works for you, and it's always unique and functional.",
   },
   {
     title: "Craftsmanship",
     description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
+      "Our work is art. We bring the same attention to detail and perfection to every project, however big or small.",
   },
   {
-    title: "Reliability",
+    title: "Value & Reliability",
     description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "Thanks to years of experience we offer superior quality services at the most competitive rates, delivered with safety and economy in mind.",
   },
   {
     title: "Communication",
     description:
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id.",
+      "We decided to listen, and we've continued to listen ever since. Our clients have taught us to always make sure it's their design throughout the process.",
   },
 ];

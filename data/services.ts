@@ -17,10 +17,10 @@ export const services: Service[] = [
     slug: "new-builds",
     title: "New Builds",
     shortDescription:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ground-up construction managed from foundation to finish.",
+      "We plan and design new constructions to be functional and aesthetically pleasing, managed from foundation to finish.",
     description: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
+      "We plan and design new constructions and renovations to be functional and aesthetically pleasing. From pre-construction services, where the practical aspects of the project are analysed, through construction management, planning and execution, to the post-construction phase, we're with you the whole way.",
+      "Thanks to years of experience we can offer superior quality building at the most competitive rates, working closely with you so the experience is enjoyable from start to finish and beyond.",
     ],
     includes: [
       "Site preparation and groundworks",
@@ -37,10 +37,10 @@ export const services: Service[] = [
     slug: "extensions",
     title: "Home Extensions",
     shortDescription:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Considered extensions that expand living space with lasting quality.",
+      "Single and two-storey extensions designed and built to expand your living space with lasting quality.",
     description: [
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
-      "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+      "We combine expertise with innovation when we design and build the structural systems that give an extension its form and shape — creating with safety, economy and your vision in mind.",
+      "From structural design through to full internal finishing, we manage every stage of your extension so it feels like a natural, seamless part of your home.",
     ],
     includes: [
       "Single and two-storey extensions",
@@ -57,10 +57,10 @@ export const services: Service[] = [
     slug: "renovations",
     title: "Renovations",
     shortDescription:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Thoughtful renovation work that respects a home's character.",
+      "We help you design and create spaces that reflect and express the uniqueness of the people living in your home.",
     description: [
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi.",
-      "Sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+      "You know what you want, what you like, and you can see the project in your mind's eye. We help bring it from inside your head into reality — and we do it in a way that means you're always in charge, even as we advise on what might not work, finding compromises in both design and cost.",
+      "We aim to please, so that you can enjoy your home in exactly the way you envision it.",
     ],
     includes: [
       "Whole-home renovation",
@@ -76,10 +76,10 @@ export const services: Service[] = [
     slug: "refurbishments",
     title: "Property Refurbishments",
     shortDescription:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Full refurbishment for tired or dated properties.",
+      "Full refurbishment for tired or dated properties, carried out to the same standard as our new builds.",
     description: [
-      "Et harum quidem rerum facilis est et expedita distinctio nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.",
-      "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.",
+      "Thanks to years of experience we can offer superior quality refurbishment services at the most competitive rates, whatever the age or condition of the property.",
+      "We work closely with you to make sure the experience is enjoyable from start to finish and beyond — when the vision is complete.",
     ],
     includes: [
       "Investment and rental property upgrades",
@@ -95,10 +95,10 @@ export const services: Service[] = [
     slug: "kitchens",
     title: "Kitchens & Interiors",
     shortDescription:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Considered interior builds finished to a high standard.",
+      "The kitchen is for more than cooking — our fit-outs always reflect that this space is the hub of the home.",
     description: [
-      "Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
-      "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.",
+      "The kitchen is for more than cooking, and our fit-outs always reflect that this space is the hub of the home. It's the first room everyone wants to see when entering a home, and a space for family bonding — so we design it with your style and personality in mind.",
+      "Every kitchen we fit is designed to be both functional and beautiful.",
     ],
     includes: [
       "Kitchen strip-out and installation",
@@ -115,10 +115,10 @@ export const services: Service[] = [
     slug: "bathrooms",
     title: "Bathrooms",
     shortDescription:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fully fitted bathrooms, from layout to final finish.",
+      "Fully fitted bathrooms, designed and built to be both functional and beautiful.",
     description: [
-      "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.",
-      "Ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.",
+      "As with every space in your home, your bathroom should be both functional and a true reflection of your style. We design and fit bathrooms with the same attention to detail we bring to every project.",
+      "From layout and waterproofing through to fixtures and final finish, we manage the full process so the result is exactly what you envisioned.",
     ],
     includes: [
       "Full bathroom strip-out and refit",
@@ -134,10 +134,10 @@ export const services: Service[] = [
     slug: "general-building",
     title: "General Building",
     shortDescription:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Reliable general building work for smaller jobs and repairs.",
+      "Reliable general building work, backed by the same standards we bring to every project, however large or small.",
     description: [
-      "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas.",
-      "Et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+      "Not every job is a full renovation or new build — we're also on hand for the smaller works and repairs that keep a home running well.",
+      "We carry out this work in a way that's functional and aesthetically pleasing, with the same care and project management you'd expect from any of our larger builds.",
     ],
     includes: [
       "General repairs and maintenance",
@@ -148,6 +148,44 @@ export const services: Service[] = [
     ],
     placeholderCategory: "generic",
     placeholderTag: "General Building",
+  },
+  {
+    slug: "structural-engineering",
+    title: "Structural Engineering",
+    shortDescription:
+      "We research, plan and design structural systems to achieve your goals, and can meet any building challenge.",
+    description: [
+      "We combine expertise with innovation when we design and build the foundation that makes the form and shape of a home or a structure.",
+      "We create with safety, economy and your vision in mind, and can meet any building challenge — from a single structural opening to full foundation design.",
+    ],
+    includes: [
+      "Structural design and planning",
+      "Foundation and load-bearing design",
+      "Building-regulation compliant structural systems",
+      "Support for new builds, extensions and renovations",
+      "Safety and economy-focused engineering solutions",
+    ],
+    placeholderCategory: "site",
+    placeholderTag: "Structural Engineering",
+  },
+  {
+    slug: "grants",
+    title: "Grants & SEAI Registered Works",
+    shortDescription:
+      "Novus Construction is an approved, registered contractor through the SEAI, helping clients access grant-supported home upgrades.",
+    description: [
+      "Novus Construction Ltd is an approved registered contractor through the SEAI. We carry out all the work clients can get grants for through their local authority — home renovations, home improvements, repair for leasing, better energy upgrades, piping and fitting, and solar panels and battery systems.",
+      "We also adapt houses to suit people with disabilities, and to help older people stay in their own home for life.",
+    ],
+    includes: [
+      "SEAI registered contractor status",
+      "Better energy / retrofit upgrades",
+      "Solar panel and battery system installation",
+      "Local authority grant-supported works",
+      "Adaptations for disabled and elderly access",
+    ],
+    placeholderCategory: "generic",
+    placeholderTag: "Grants",
   },
 ];
 

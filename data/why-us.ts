@@ -8,37 +8,37 @@ export const whyUsPoints: WhyUsPoint[] = [
   {
     title: "Experienced Team",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      "Our team consists of qualified and experienced construction professionals who strive to achieve the highest standard of quality and value.",
     icon: "users",
   },
   {
     title: "Personal Service",
     description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.",
+      "You're always in charge. We help bring your vision to life and only build what works for you, in a way that's always unique and functional.",
     icon: "handshake",
   },
   {
     title: "Quality Workmanship",
     description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
+      "Our work is art. Our service is outstanding, and the quality of the work we produce speaks for itself.",
     icon: "gem",
   },
   {
     title: "Attention to Detail",
     description:
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.",
+      "We bring the same attention to detail and perfection to every project, whatever its size or scope.",
     icon: "search",
   },
   {
     title: "Reliable Communication",
     description:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+      "We decided to listen, and we've continued to listen ever since — making sure it's your design throughout the process.",
     icon: "phone-call",
   },
   {
     title: "End-to-End Support",
     description:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.",
+      "From pre-construction planning through construction management to the post-construction phase, we're with you the whole way.",
     icon: "clipboard-check",
   },
 ];

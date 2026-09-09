@@ -29,8 +29,8 @@ export function FinalCta() {
               Let&apos;s Build Something.
             </h2>
             <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-background/70 sm:text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
+              Have an idea, a vision, or a dream in mind for your home? Get in touch and let&apos;s
+              see how it can become a reality.
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button href="/contact" size="lg">

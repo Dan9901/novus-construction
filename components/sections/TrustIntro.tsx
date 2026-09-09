@@ -13,7 +13,7 @@ export function TrustIntro() {
           <SectionHeading
             eyebrow="About Novus Construction"
             title="10 Years of Building Better"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+            description="We pride ourselves on the level of service we provide to our customers and the quality of the work we produce. We offer specialist services in all areas of renovation and construction, working closely with our clients so the experience is enjoyable from start to finish and beyond."
             align="center"
             className="mx-auto"
           />

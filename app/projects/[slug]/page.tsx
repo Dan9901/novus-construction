@@ -141,8 +141,8 @@ export default async function ProjectDetailPage({
                 Have a similar project in mind?
               </h2>
               <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tell us about your project
-                and we&apos;ll be in touch with a clear, no-obligation quote.
+                Have you an idea, a vision, or a dream in mind for your home? Tell us about your
+                project and we&apos;ll be in touch with a clear, no-obligation quote.
               </p>
               <div className="mt-8 flex justify-center">
                 <Button href="/contact" size="lg">

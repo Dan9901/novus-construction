@@ -16,13 +16,14 @@ export function Hero() {
           </span>
 
           <h1 className="font-display text-4xl font-medium leading-[1.05] tracking-tight text-balance sm:text-5xl md:text-6xl">
-            Building Better Spaces, From Foundation to Finish.
+            Building the Future, Restoring the Past.
           </h1>
 
           <p className="mt-6 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua, delivered by a small, dedicated team who
-            treat every project like it&apos;s their own.
+            Novus Construction can help you achieve your vision for your home. Whether your
+            requirement is for a renovation, extension, new build or any other home improvement
+            project, our mission is your goal — delivered by a small, dedicated team of qualified,
+            experienced construction professionals.
           </p>
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">

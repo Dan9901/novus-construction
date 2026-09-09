@@ -24,7 +24,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="About Novus Construction"
         title="A Small Team, Built on Craft"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        description="Novus Construction Ltd was founded with one mission in mind: to restore the old and build the future of home interior and exterior."
       />
 
       <Section>
@@ -45,15 +45,24 @@ export default function AboutPage() {
               <SectionHeading eyebrow="Our Story" title="Ten Years of Hands-On Building" />
               <div className="mt-6 flex flex-col gap-5">
                 <p className="text-base leading-relaxed text-foreground-soft">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam, quis
-                  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  Novus Construction Ltd was founded with one mission in mind: to restore the old
+                  and build the future of home interior and exterior. We want to help people
+                  design and create the inside of their home to reflect and express the uniqueness
+                  of the people living in the house — and we design and create the outside of the
+                  house too, making sure your unique vision is immediately visible.
                 </p>
                 <p className="text-base leading-relaxed text-foreground-soft">
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                  fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum, remaining a small,
-                  owner-led team by choice.
+                  We&apos;ve been designing, creating and building some of the most beautiful
+                  kitchens on the Irish market for years, and thanks to our many satisfied clients
+                  we continue to grow as a company — while remaining a small, owner-led team by
+                  choice.
+                </p>
+                <p className="text-base leading-relaxed text-foreground-soft">
+                  Our story began when we realised people wanted not just something functional,
+                  but an expression of self in the design. We decided to listen — and we&apos;ve
+                  continued to listen ever since. The client is always in focus when we design,
+                  create and build; we only build what works for you, and it&apos;s always unique
+                  and functional.
                 </p>
               </div>
 
@@ -73,7 +82,7 @@ export default function AboutPage() {
             <SectionHeading
               eyebrow="What We Believe"
               title="Our Values"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+              description="Our story began when we realised people wanted not just something functional, but an expression of self in the design — so we decided to listen, and we've continued to listen ever since."
               align="center"
               className="mx-auto"
             />
@@ -103,7 +112,7 @@ export default function AboutPage() {
             <SectionHeading
               eyebrow="Meet the Team"
               title="The People Behind Novus"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. A small team of three, working directly on every project."
+              description="A small team of three, working directly on every project."
               align="center"
               className="mx-auto"
             />

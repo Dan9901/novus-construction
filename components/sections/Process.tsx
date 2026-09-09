@@ -12,7 +12,7 @@ export function Process() {
           <SectionHeading
             eyebrow="How It Works"
             title="Our Process"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. A clear, structured process from first call to final handover."
+            description="From pre-construction services, where the practical aspects of your project are analysed, through to the post-construction phase — we're with you the whole way."
             tone="dark"
           />
         </Reveal>

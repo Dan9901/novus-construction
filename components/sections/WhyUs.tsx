@@ -43,7 +43,7 @@ export function WhyUs() {
               <SectionHeading
                 eyebrow="Why Novus"
                 title="Why Choose Novus Construction"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                description="We pride ourselves on the level of service we provide to our customers and the quality of the work we produce."
               />
             </Reveal>
 

@@ -23,8 +23,8 @@ export function Footer() {
           <div className="flex flex-col gap-5">
             <Logo tone="dark" />
             <p className="max-w-xs text-sm leading-relaxed text-background/60">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
+              Specialist services in all areas of renovation and construction, from design and
+              planning through to completion.
             </p>
             <div className="flex items-center gap-3">
               {siteConfig.social.map((item) => {
@@ -108,7 +108,7 @@ export function Footer() {
 
         <div className="mt-16 flex flex-col gap-4 border-t border-background/10 pt-8 text-xs text-background/50 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            &copy; {year} {siteConfig.name}. All rights reserved.
+            &copy; {year} {siteConfig.name} Ltd. All rights reserved.
           </p>
           <p>Placeholder content for demonstration purposes.</p>
         </div>

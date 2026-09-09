@@ -17,7 +17,7 @@ export function ServicesGrid() {
             <SectionHeading
               eyebrow="What We Do"
               title="Construction Services"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. From ground-up builds to the finishing details."
+              description="In restoring the past and building the future, we have a wealth of services — here is an introduction to all of them."
             />
             <Button href="/services" variant="outline" className="hidden shrink-0 sm:inline-flex">
               All Services

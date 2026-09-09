@@ -17,7 +17,7 @@ export function FeaturedProjects() {
             <SectionHeading
               eyebrow="Our Work"
               title="Recent Projects"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. A selection of recent builds, extensions and renovations."
+              description="Our service is outstanding, and the quality of work we do speaks for itself — but do have a look at some of the work we've done and be amazed."
             />
             <Button href="/projects" variant="outline" className="hidden shrink-0 sm:inline-flex">
               View All Projects

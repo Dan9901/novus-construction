@@ -8,31 +8,26 @@ export const processSteps: ProcessStep[] = [
   {
     number: "01",
     title: "Initial Consultation",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. We talk through your project, your goals and your budget.",
+    description: "We talk through your vision for the project, your goals and your budget.",
   },
   {
     number: "02",
     title: "Site Assessment",
-    description:
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A full survey of the site to understand scope and constraints.",
+    description: "A full survey of the site to understand the practical aspects, scope and constraints.",
   },
   {
     number: "03",
     title: "Planning & Quote",
-    description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. A clear, itemised quote and project timeline.",
+    description: "A clear, itemised quote and project timeline, with compromises in design and cost always agreed with you.",
   },
   {
     number: "04",
     title: "Construction",
-    description:
-      "Duis aute irure dolor in reprehenderit in voluptate. Skilled work carried out with regular updates throughout.",
+    description: "Skilled work carried out with regular updates throughout, so you're always in charge.",
   },
   {
     number: "05",
     title: "Completion",
-    description:
-      "Excepteur sint occaecat cupidatat non proident. A final walkthrough, snagging and handover of your finished space.",
+    description: "A final walkthrough, snagging and handover — the vision complete.",
   },
 ];

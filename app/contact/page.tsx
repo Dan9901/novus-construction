@@ -40,7 +40,7 @@ export default function ContactPage() {
       <PageHeader
         eyebrow="Get In Touch"
         title="Let's Talk About Your Project"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Call, email, or fill in the form below and we'll get back to you with a clear, no-obligation quote."
+        description="Have you an idea, a vision, or a dream in mind for your home? Call, email, or fill in the form below and we'll get back to you with a clear, no-obligation quote."
       />
 
       <Section>
