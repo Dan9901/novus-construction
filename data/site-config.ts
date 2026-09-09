@@ -13,7 +13,7 @@ export const siteConfig = {
   founded: 2016,
   stats: [
     { value: "10+", label: "Years Experience" },
-    { value: "100+", label: "Projects Completed" },
+    { value: "55+", label: "Projects Completed" },
   ],
   social: [
     { label: "Instagram", href: "#" },
