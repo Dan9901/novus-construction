@@ -6,16 +6,14 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { StatBlock } from "@/components/ui/StatBlock";
 import { Reveal } from "@/components/ui/Reveal";
-import { TeamCard } from "@/components/about/TeamCard";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { siteConfig } from "@/data/site-config";
-import { team } from "@/data/team";
 import { values } from "@/data/values";
 
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Novus Construction is a small, owner-led building contractor with around 10 years of experience carrying out new builds, extensions and renovations.",
+    "Novus Construction is a small, owner-led building contractor with 10+ years of experience carrying out new builds, extensions and renovations.",
 };
 
 export default function AboutPage() {
@@ -42,7 +40,7 @@ export default function AboutPage() {
             </Reveal>
 
             <Reveal delay={100}>
-              <SectionHeading eyebrow="Our Story" title="Ten Years of Hands-On Building" />
+              <SectionHeading eyebrow="Our Story" title="10+ Years of Hands-On Building" />
               <div className="mt-6 flex flex-col gap-5">
                 <p className="text-base leading-relaxed text-foreground-soft">
                   Novus Construction Ltd was founded with one mission in mind: to restore the old
@@ -66,7 +64,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="mt-9 grid grid-cols-3 gap-6 border-t border-border pt-8">
+              <div className="mt-9 grid grid-cols-2 gap-6 border-t border-border pt-8">
                 {siteConfig.stats.map((stat) => (
                   <StatBlock key={stat.label} value={stat.value} label={stat.label} />
                 ))}
@@ -100,28 +98,6 @@ export default function AboutPage() {
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{value.description}</p>
                 </div>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      <Section>
-        <Container>
-          <Reveal>
-            <SectionHeading
-              eyebrow="Meet the Team"
-              title="The People Behind Novus"
-              description="A small team of three, working directly on every project."
-              align="center"
-              className="mx-auto"
-            />
-          </Reveal>
-
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
-            {team.map((member, index) => (
-              <Reveal key={member.name + index} delay={index * 80}>
-                <TeamCard member={member} index={index} />
               </Reveal>
             ))}
           </div>

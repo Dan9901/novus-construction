@@ -6,6 +6,8 @@ import { Reveal } from "@/components/ui/Reveal";
 import { siteConfig } from "@/data/site-config";
 
 export function Hero() {
+  const projectsStat = siteConfig.stats.find((stat) => stat.label === "Projects Completed") ?? siteConfig.stats[0];
+
   return (
     <section className="relative overflow-hidden border-b border-border bg-background">
       <Container className="grid grid-cols-1 items-center gap-12 pt-12 pb-16 sm:pt-16 sm:pb-20 lg:grid-cols-2 lg:gap-16 lg:pt-20 lg:pb-24">
@@ -62,10 +64,10 @@ export function Hero() {
             />
             <div className="absolute -bottom-6 -left-6 hidden w-52 border border-border bg-background p-5 shadow-[0_20px_50px_-25px_rgba(27,23,18,0.35)] sm:block">
               <span className="font-display text-3xl font-medium tracking-tight">
-                {siteConfig.stats[2].value}
+                {projectsStat.value}
               </span>
               <p className="mt-1 text-xs font-medium uppercase tracking-[0.14em] text-muted">
-                {siteConfig.stats[2].label}
+                {projectsStat.label}
               </p>
             </div>
           </div>

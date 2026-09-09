@@ -13,7 +13,6 @@ export const siteConfig = {
   founded: 2016,
   stats: [
     { value: "10+", label: "Years Experience" },
-    { value: "3", label: "Skilled Professionals" },
     { value: "100+", label: "Projects Completed" },
   ],
   social: [
