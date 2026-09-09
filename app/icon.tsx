@@ -1,5 +1,3 @@
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
 export const size = {
@@ -10,9 +8,6 @@ export const size = {
 export const contentType = "image/png";
 
 export default function Icon() {
-  const iconBase64 = readFileSync(join(process.cwd(), "public", "logo-icon.png")).toString("base64");
-  const iconSrc = `data:image/png;base64,${iconBase64}`;
-
   return new ImageResponse(
     (
       <div
@@ -23,10 +18,13 @@ export default function Icon() {
           alignItems: "center",
           justifyContent: "center",
           background: "#1b1712",
+          color: "#b8281e",
+          fontSize: 26,
+          fontWeight: 600,
+          fontFamily: "Georgia, serif",
         }}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={iconSrc} width={40} height={20} alt="" />
+        N
       </div>
     ),
     size
