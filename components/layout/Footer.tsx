@@ -1,18 +1,11 @@
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { FacebookIcon, GoogleIcon, InstagramIcon, LinkedInIcon } from "@/components/icons/SocialIcons";
+import { GoogleIcon } from "@/components/icons/SocialIcons";
 import { navLinks } from "@/data/nav";
 import { services } from "@/data/services";
 import { siteConfig } from "@/data/site-config";
 import { Logo } from "./Logo";
-
-const socialIcons = {
-  Google: GoogleIcon,
-  Instagram: InstagramIcon,
-  Facebook: FacebookIcon,
-  LinkedIn: LinkedInIcon,
-} as const;
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -27,23 +20,15 @@ export function Footer() {
               Specialist services in all areas of renovation and construction, from design and
               planning through to completion.
             </p>
-            <div className="flex items-center gap-3">
-              {siteConfig.social.map((item) => {
-                const Icon = socialIcons[item.label as keyof typeof socialIcons];
-                return (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={item.label}
-                    className="flex h-9 w-9 items-center justify-center border border-background/20 text-background/70 transition-colors hover:border-accent hover:text-accent"
-                  >
-                    {Icon ? <Icon className="h-4 w-4" aria-hidden /> : null}
-                  </a>
-                );
-              })}
-            </div>
+            <a
+              href={siteConfig.googleProfileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 self-start border border-background/25 px-4 py-2.5 text-sm font-semibold text-background transition-colors hover:border-accent hover:text-accent"
+            >
+              <GoogleIcon className="h-4 w-4" aria-hidden />
+              Find Us on Google
+            </a>
           </div>
 
           <div>

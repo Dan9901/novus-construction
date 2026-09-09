@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { QuoteForm } from "@/components/forms/QuoteForm";
+import { GoogleIcon } from "@/components/icons/SocialIcons";
 import { siteConfig } from "@/data/site-config";
 
 export const metadata: Metadata = {
@@ -19,18 +20,28 @@ const contactDetails = [
     label: "Phone",
     value: siteConfig.phoneDisplay,
     href: siteConfig.phoneHref,
+    external: false,
   },
   {
     icon: Mail,
     label: "Email",
     value: siteConfig.email,
     href: siteConfig.emailHref,
+    external: false,
   },
   {
     icon: Clock,
     label: "Hours",
     value: siteConfig.hours,
     href: undefined,
+    external: false,
+  },
+  {
+    icon: GoogleIcon,
+    label: "Find Us",
+    value: "View our Google Business profile",
+    href: siteConfig.googleProfileUrl,
+    external: true,
   },
 ];
 
@@ -67,7 +78,12 @@ export default function ContactPage() {
                   );
 
                   return detail.href ? (
-                    <a key={detail.label} href={detail.href} className="block">
+                    <a
+                      key={detail.label}
+                      href={detail.href}
+                      className="block"
+                      {...(detail.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    >
                       {content}
                     </a>
                   ) : (

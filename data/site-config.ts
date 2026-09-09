@@ -16,10 +16,4 @@ export const siteConfig = {
     { value: "55+", label: "Projects Completed" },
   ],
   googleProfileUrl: "https://share.google/SZ1EKUDrQX8BswB33",
-  social: [
-    { label: "Google", href: "https://share.google/SZ1EKUDrQX8BswB33" },
-    { label: "Instagram", href: "#" },
-    { label: "Facebook", href: "#" },
-    { label: "LinkedIn", href: "#" },
-  ],
 } as const;
