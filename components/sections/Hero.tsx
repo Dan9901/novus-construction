@@ -58,7 +58,7 @@ export function Hero() {
               category="house"
               ratio="aspect-[4/5]"
               className="w-full"
-              src="/samples/exterior-brick.jpg"
+              src="/projects/house-a-exterior.jpg"
               priority
               sizes="(max-width: 1024px) 100vw, 50vw"
             />

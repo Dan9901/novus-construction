@@ -34,7 +34,7 @@ export default function AboutPage() {
                 category="site"
                 ratio="aspect-[4/5]"
                 className="w-full"
-                src="/samples/kitchen-modern.jpg"
+                src="/projects/house-a-interior.jpg"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </Reveal>

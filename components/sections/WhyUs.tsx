@@ -33,7 +33,7 @@ export function WhyUs() {
               category="team"
               ratio="aspect-[3/4]"
               className="w-full lg:sticky lg:top-28"
-              src="/samples/kitchen-exposed-beam.jpg"
+              src="/projects/house-b-interior.jpg"
               sizes="(max-width: 1024px) 100vw, 45vw"
             />
           </Reveal>

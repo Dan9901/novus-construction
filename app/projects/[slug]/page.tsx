@@ -120,7 +120,9 @@ export default async function ProjectDetailPage({
           <Reveal>
             <h2 className="font-display text-2xl font-medium tracking-tight">Photo Gallery</h2>
             <p className="mt-2 text-sm text-muted">
-              Placeholder gallery — select any photo to open the full-size viewer.
+              {project.images
+                ? "Select any photo to open the full-size viewer."
+                : "Placeholder gallery — select any photo to open the full-size viewer."}
             </p>
           </Reveal>
           <div className="mt-8">
@@ -128,6 +130,7 @@ export default async function ProjectDetailPage({
               projectName={project.name}
               category={project.category}
               count={project.galleryCount}
+              photos={project.images}
             />
           </div>
         </Container>

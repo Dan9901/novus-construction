@@ -40,3 +40,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw, unprocessed source photos dropped at the project root (multi-MB camera
+# originals) — optimized/processed versions live under public/ and are tracked
+House A.jpg
+House A - Interior.jpg
+House A - Kitchen.jpg
+House B.jpg
+House B - Interior.jpg
+House B - Kitchen.jpg

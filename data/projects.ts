@@ -34,6 +34,8 @@ export type Project = {
   galleryCount: number;
   /** Optional sample photo (path under /public) shown instead of the abstract placeholder. */
   image?: string;
+  /** Optional real gallery photos (path under /public). When set, these replace the abstract gallery placeholders. */
+  images?: { src: string; label: string }[];
 };
 
 export const projects: Project[] = [
@@ -70,8 +72,13 @@ export const projects: Project[] = [
       "Et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.",
       "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.",
     ],
-    galleryCount: 6,
-    image: "/samples/kitchen-exposed-beam.jpg",
+    galleryCount: 3,
+    image: "/projects/house-a-exterior.jpg",
+    images: [
+      { src: "/projects/house-a-exterior.jpg", label: "House Y — Exterior" },
+      { src: "/projects/house-a-interior.jpg", label: "House Y — Open-Plan Living" },
+      { src: "/projects/house-a-kitchen.jpg", label: "House Y — Kitchen" },
+    ],
   },
   {
     slug: "house-z",
@@ -142,8 +149,13 @@ export const projects: Project[] = [
       "Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem ut enim ad minima veniam.",
       "Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
     ],
-    galleryCount: 6,
-    image: "/samples/kitchen-modern.jpg",
+    galleryCount: 3,
+    image: "/projects/house-b-exterior.jpg",
+    images: [
+      { src: "/projects/house-b-exterior.jpg", label: "Project C — Exterior" },
+      { src: "/projects/house-b-interior.jpg", label: "Project C — Roof & Window Detail" },
+      { src: "/projects/house-b-kitchen.jpg", label: "Project C — Kitchen" },
+    ],
   },
 ];
 

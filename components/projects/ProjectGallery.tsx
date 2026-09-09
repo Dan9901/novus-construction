@@ -5,18 +5,25 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { projectCategoryPlaceholder, type ProjectCategory } from "@/data/projects";
 
+type GalleryPhoto = { label: string; src?: string };
+
 export function ProjectGallery({
   projectName,
   category,
   count,
+  photos,
 }: {
   projectName: string;
   category: ProjectCategory;
   count: number;
+  photos?: GalleryPhoto[];
 }) {
-  const images = Array.from({ length: count }, (_, index) => ({
-    label: `${projectName} — Photo ${index + 1}`,
-  }));
+  const images: GalleryPhoto[] =
+    photos && photos.length > 0
+      ? photos
+      : Array.from({ length: count }, (_, index) => ({
+          label: `${projectName} — Photo ${index + 1}`,
+        }));
 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -80,10 +87,12 @@ export function ProjectGallery({
             aria-label={`Open photo ${index + 1} of ${images.length}`}
           >
             <PlaceholderImage
-              label={`Photo ${index + 1}`}
+              label={image.src ? image.label : `Photo ${index + 1}`}
               category={placeholderCategory}
               ratio="aspect-square"
               index={index}
+              src={image.src}
+              sizes="(max-width: 640px) 50vw, 33vw"
               className="transition-opacity duration-300 group-hover:opacity-85"
             />
           </button>
@@ -128,6 +137,8 @@ export function ProjectGallery({
                 category={placeholderCategory}
                 ratio="aspect-[4/3]"
                 index={activeIndex}
+                src={images[activeIndex].src}
+                sizes="(max-width: 1024px) 100vw, 768px"
                 className="w-full"
               />
             </div>

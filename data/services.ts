@@ -51,7 +51,7 @@ export const services: Service[] = [
     ],
     placeholderCategory: "extension",
     placeholderTag: "Extension",
-    image: "/samples/kitchen-exposed-beam.jpg",
+    image: "/projects/house-b-exterior.jpg",
   },
   {
     slug: "renovations",
@@ -109,7 +109,7 @@ export const services: Service[] = [
     ],
     placeholderCategory: "kitchen",
     placeholderTag: "Kitchen",
-    image: "/samples/kitchen-modern.jpg",
+    image: "/projects/house-a-kitchen.jpg",
   },
   {
     slug: "bathrooms",
