@@ -6,6 +6,7 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { Reveal } from "@/components/ui/Reveal";
+import { ImageReveal } from "@/components/ui/ImageReveal";
 import { ProjectGallery } from "@/components/projects/ProjectGallery";
 import {
   getProjectBySlug,
@@ -72,7 +73,7 @@ export default async function ProjectDetailPage({
 
       <Section>
         <Container>
-          <Reveal>
+          <ImageReveal className="w-full">
             <PlaceholderImage
               label={`${project.name} — Main Image`}
               category={projectCategoryPlaceholder[project.category]}
@@ -81,7 +82,7 @@ export default async function ProjectDetailPage({
               src={project.image}
               priority
             />
-          </Reveal>
+          </ImageReveal>
 
           <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
             <Reveal delay={80}>

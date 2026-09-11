@@ -1,32 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { useEffect, useRef, useState } from "react";
 import { animate, useInView } from "motion/react";
-
-const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
-
-function subscribe(callback: () => void) {
-  const mql = window.matchMedia(REDUCED_MOTION_QUERY);
-  mql.addEventListener("change", callback);
-  return () => mql.removeEventListener("change", callback);
-}
-
-const getServerSnapshot = () => false;
-
-/**
- * SSR-safe reduced-motion check. Unlike motion's own `useReducedMotion`,
- * this is guaranteed to return `false` on the server *and* on the client's
- * first (hydration) render, only switching to the real value in a normal
- * post-mount update — otherwise a component that renders different text
- * based on this flag causes a hydration mismatch.
- */
-function usePrefersReducedMotion() {
-  return useSyncExternalStore(
-    subscribe,
-    () => window.matchMedia(REDUCED_MOTION_QUERY).matches,
-    getServerSnapshot
-  );
-}
+import { useMediaQuery } from "@/lib/useMediaQuery";
 
 /**
  * Renders a numeric-prefixed value (e.g. "10+", "55+") that counts up from 0.
@@ -52,7 +28,7 @@ export function AnimatedNumber({
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: "0px 0px -40px 0px" });
   const shouldStart = triggerOnMount || isInView;
-  const prefersReducedMotion = usePrefersReducedMotion();
+  const prefersReducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
   const [display, setDisplay] = useState(0);
 
   useEffect(() => {

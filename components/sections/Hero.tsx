@@ -1,7 +1,8 @@
 "use client";
 
+import { useRef } from "react";
 import { Phone } from "lucide-react";
-import { motion, type Variants } from "motion/react";
+import { motion, useScroll, useTransform, type Variants } from "motion/react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
@@ -20,9 +21,23 @@ const item: Variants = {
 
 export function Hero() {
   const projectsStat = siteConfig.stats.find((stat) => stat.label === "Projects Completed") ?? siteConfig.stats[0];
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
+  const gridY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
 
   return (
-    <section className="relative overflow-hidden border-b border-border bg-background">
+    <section ref={sectionRef} className="relative overflow-hidden border-b border-border bg-background">
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          y: gridY,
+          zIndex: -1,
+          backgroundImage:
+            "linear-gradient(rgba(27,23,18,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(27,23,18,0.06) 1px, transparent 1px)",
+          backgroundSize: "56px 56px",
+        }}
+      />
       <Container className="grid grid-cols-1 items-center gap-12 pt-12 pb-16 sm:pt-16 sm:pb-20 lg:grid-cols-2 lg:gap-16 lg:pt-20 lg:pb-24">
         <motion.div initial="hidden" animate="visible" variants={container}>
           <motion.span
@@ -48,7 +63,7 @@ export function Hero() {
           </motion.p>
 
           <motion.div variants={item} className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Button href="/contact" size="lg">
+            <Button href="/contact" size="lg" magnetic>
               Request a Quote
             </Button>
             <Button href="/projects" variant="outline" size="lg">

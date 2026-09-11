@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useMagnetic } from "@/lib/useMagnetic";
 
 const MotionLink = motion.create(Link);
 
@@ -17,6 +18,8 @@ type BaseProps = {
   size?: ButtonSize;
   className?: string;
   showArrow?: boolean;
+  /** Pulls the button a few px toward the cursor on hover, spring-back on leave. Reserved for flagship CTAs. */
+  magnetic?: boolean;
 };
 
 type LinkProps = BaseProps & {
@@ -54,8 +57,9 @@ const baseClasses =
 const springTransition = { type: "spring" as const, stiffness: 420, damping: 24 };
 
 export function Button(props: ButtonProps) {
-  const { children, variant = "primary", size = "md", className, showArrow = true } = props;
+  const { children, variant = "primary", size = "md", className, showArrow = true, magnetic = false } = props;
   const isGhost = variant === "ghost";
+  const magnet = useMagnetic();
 
   const classes = cn(
     baseClasses,
@@ -69,9 +73,14 @@ export function Button(props: ButtonProps) {
   const motionProps = isGhost
     ? {}
     : {
-        whileHover: { scale: 1.025, y: -1 },
+        // Magnetic buttons get their y-pull from the magnetic spring instead of whileHover,
+        // so the two don't fight over the same transform.
+        whileHover: magnetic ? { scale: 1.025 } : { scale: 1.025, y: -1 },
         whileTap: { scale: 0.97, y: 0 },
         transition: springTransition,
+        ...(magnetic
+          ? { style: { x: magnet.x, y: magnet.y }, onMouseMove: magnet.onMouseMove, onMouseLeave: magnet.onMouseLeave }
+          : {}),
       };
 
   const content = (

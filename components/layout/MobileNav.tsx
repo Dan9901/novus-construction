@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useSyncExternalStore } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { Menu, Phone, X } from "lucide-react";
@@ -8,17 +8,7 @@ import { navLinks } from "@/data/nav";
 import { siteConfig } from "@/data/site-config";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
-
-const noopSubscribe = () => () => {};
-
-/** True once running in the browser — lets us defer the portal until after hydration without an effect-triggered re-render. */
-function useIsClient() {
-  return useSyncExternalStore(
-    noopSubscribe,
-    () => true,
-    () => false
-  );
-}
+import { useIsClient } from "@/lib/useIsClient";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);

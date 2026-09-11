@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { GrainOverlay } from "@/components/ui/GrainOverlay";
 
 type SectionTone = "default" | "surface" | "dark";
 
@@ -21,7 +22,11 @@ export function Section({
   children: ReactNode;
 }) {
   return (
-    <section id={id} className={cn("py-20 sm:py-24 md:py-28", toneClasses[tone], className)}>
+    <section
+      id={id}
+      className={cn("relative py-20 sm:py-24 md:py-28", toneClasses[tone], className)}
+    >
+      {tone === "dark" ? <GrainOverlay /> : null}
       {children}
     </section>
   );

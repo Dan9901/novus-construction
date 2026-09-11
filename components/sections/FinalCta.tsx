@@ -7,6 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { Reveal } from "@/components/ui/Reveal";
+import { GrainOverlay } from "@/components/ui/GrainOverlay";
 import { siteConfig } from "@/data/site-config";
 
 export function FinalCta() {
@@ -33,6 +34,7 @@ export function FinalCta() {
         className="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/92 to-foreground/75"
         aria-hidden
       />
+      <GrainOverlay />
 
       <Container className="relative py-24 sm:py-28">
         <Reveal>
@@ -45,7 +47,7 @@ export function FinalCta() {
               see how it can become a reality.
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href="/contact" size="lg">
+              <Button href="/contact" size="lg" magnetic>
                 Request a Quote
               </Button>
               <Button href={siteConfig.phoneHref} variant="outline-light" size="lg" showArrow={false}>

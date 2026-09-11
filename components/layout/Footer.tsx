@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { GrainOverlay } from "@/components/ui/GrainOverlay";
 import { GoogleIcon } from "@/components/icons/SocialIcons";
 import { navLinks } from "@/data/nav";
 import { services } from "@/data/services";
@@ -11,8 +12,9 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-background/10 bg-foreground pb-20 text-background lg:pb-0">
-      <Container className="py-16 sm:py-20">
+    <footer className="relative border-t border-background/10 bg-foreground pb-20 text-background lg:pb-0">
+      <GrainOverlay />
+      <Container className="relative py-16 sm:py-20">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
           <div className="flex flex-col gap-5">
             <Logo tone="dark" />

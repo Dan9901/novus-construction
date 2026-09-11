@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { StatBlock } from "@/components/ui/StatBlock";
 import { Reveal } from "@/components/ui/Reveal";
+import { ImageReveal } from "@/components/ui/ImageReveal";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { siteConfig } from "@/data/site-config";
 import { values } from "@/data/values";
@@ -28,7 +29,7 @@ export default function AboutPage() {
       <Section>
         <Container>
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <Reveal>
+            <ImageReveal className="w-full">
               <PlaceholderImage
                 label="Recent Kitchen Project"
                 category="site"
@@ -37,7 +38,7 @@ export default function AboutPage() {
                 src="/projects/house-a-interior.jpg"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-            </Reveal>
+            </ImageReveal>
 
             <Reveal delay={100}>
               <SectionHeading eyebrow="Our Story" title="10+ Years of Hands-On Building" />
