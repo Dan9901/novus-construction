@@ -100,7 +100,7 @@ export function Preloader() {
                   initial={{ y: "0%" }}
                   exit={{
                     y: "-115%",
-                    transition: { duration: 0.85, ease: [0.76, 0, 0.24, 1], delay: index * 0.07 },
+                    transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1], delay: index * 0.05 },
                   }}
                 />
               ))}
@@ -109,7 +109,7 @@ export function Preloader() {
 
           <motion.div
             className="relative flex flex-col items-center gap-5"
-            exit={{ opacity: 0, y: -28, transition: { duration: 0.45, ease: [0.76, 0, 0.24, 1] } }}
+            exit={{ opacity: 0, y: -28, transition: { duration: 0.35, ease: [0.76, 0, 0.24, 1] } }}
           >
             <span className="block overflow-hidden">
               <motion.span

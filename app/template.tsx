@@ -49,9 +49,9 @@ export default function Template({ children }: { children: ReactNode }) {
               animate={{ scaleY: 0 }}
               style={{ originY: 0 }}
               transition={{
-                duration: 0.72,
+                duration: 0.5,
                 ease: [0.76, 0, 0.24, 1],
-                delay: index * 0.075,
+                delay: index * 0.045,
               }}
             />
           ))}
@@ -61,7 +61,7 @@ export default function Template({ children }: { children: ReactNode }) {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, ease: "easeOut", delay: 0.24 }}
+        transition={{ duration: 0.32, ease: "easeOut", delay: 0.16 }}
       >
         {children}
       </motion.div>

@@ -7,9 +7,9 @@ import { BlueprintScene, MODELS, type BlueprintModel } from "./BlueprintModels";
 import { useMediaQuery } from "@/lib/useMediaQuery";
 import { useHasWebGL } from "@/lib/useHasWebGL";
 
-const ASSEMBLE_SECONDS = 3.4;
-const HOLD_SECONDS = 3.6;
-const DISASSEMBLE_SECONDS = 1.6;
+const ASSEMBLE_SECONDS = 3.0;
+const HOLD_SECONDS = 1.9;
+const DISASSEMBLE_SECONDS = 1.25;
 
 function stageFor(t: number, stages: BlueprintModel["stages"]) {
   let index = 0;
