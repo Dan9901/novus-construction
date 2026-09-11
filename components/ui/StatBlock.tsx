@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { AnimatedNumber } from "./AnimatedNumber";
 
 export function StatBlock({
   value,
@@ -13,7 +14,10 @@ export function StatBlock({
 }) {
   return (
     <div className={cn("flex flex-col gap-1.5", className)}>
-      <span className="font-display text-4xl font-medium tracking-tight sm:text-5xl">{value}</span>
+      <AnimatedNumber
+        value={value}
+        className="font-display text-4xl font-medium tracking-tight sm:text-5xl"
+      />
       <span
         className={cn(
           "text-xs font-medium uppercase tracking-[0.16em] sm:text-sm",

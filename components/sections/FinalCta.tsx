@@ -1,3 +1,7 @@
+"use client";
+
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { Mail } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -6,17 +10,25 @@ import { Reveal } from "@/components/ui/Reveal";
 import { siteConfig } from "@/data/site-config";
 
 export function FinalCta() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
+
   return (
-    <section className="relative overflow-hidden bg-foreground text-background">
-      <div className="absolute inset-0 opacity-35">
+    <section ref={sectionRef} className="relative overflow-hidden bg-foreground text-background">
+      <motion.div className="absolute inset-0 opacity-35" style={{ y }}>
         <PlaceholderImage
           label="Site Under Construction"
           category="site"
           ratio="h-full w-full"
           showLabel={false}
           iconClassName="h-20 w-20 sm:h-28 sm:w-28"
+          className="scale-125"
         />
-      </div>
+      </motion.div>
       <div
         className="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/92 to-foreground/75"
         aria-hidden

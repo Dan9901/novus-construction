@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -19,6 +22,14 @@ export function Process() {
 
         <div className="relative mt-16">
           <div className="absolute left-0 right-0 top-6 hidden h-px bg-background/15 sm:block" aria-hidden />
+          <motion.div
+            className="absolute left-0 top-6 hidden h-px origin-left bg-accent sm:block sm:w-full"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+            aria-hidden
+          />
           <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-5 sm:gap-x-6">
             {processSteps.map((step, index) => (
               <Reveal key={step.number} delay={index * 80}>

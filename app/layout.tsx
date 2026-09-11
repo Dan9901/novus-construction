@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
+import { MotionConfig } from "motion/react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyMobileBar } from "@/components/layout/StickyMobileBar";
@@ -64,10 +65,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <StickyMobileBar />
+        <MotionConfig reducedMotion="user">
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <StickyMobileBar />
+        </MotionConfig>
       </body>
     </html>
   );

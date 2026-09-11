@@ -1,13 +1,20 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import type { Service } from "@/data/services";
 
+const MotionLink = motion.create(Link);
+
 export function ServiceCard({ service, index = 0 }: { service: Service; index?: number }) {
   return (
-    <Link
+    <MotionLink
       href={`/services/${service.slug}`}
-      className="group flex flex-col overflow-hidden border border-border bg-background transition-colors duration-300 hover:border-accent/60"
+      whileHover={{ y: -6 }}
+      transition={{ type: "spring", stiffness: 300, damping: 24 }}
+      className="group flex flex-col overflow-hidden border border-border bg-background transition-[color,background-color,border-color,box-shadow] duration-300 hover:border-accent/60 hover:shadow-[0_24px_48px_-28px_rgba(27,23,18,0.35)]"
     >
       <PlaceholderImage
         label={service.placeholderTag}
@@ -24,6 +31,6 @@ export function ServiceCard({ service, index = 0 }: { service: Service; index?: 
           <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden />
         </span>
       </div>
-    </Link>
+    </MotionLink>
   );
 }

@@ -1,14 +1,21 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { Badge } from "@/components/ui/Badge";
 import { projectCategoryPlaceholder, type Project } from "@/data/projects";
 
+const MotionLink = motion.create(Link);
+
 export function ProjectCard({ project, index = 0 }: { project: Project; index?: number }) {
   return (
-    <Link
+    <MotionLink
       href={`/projects/${project.slug}`}
-      className="group flex flex-col overflow-hidden border border-border bg-background transition-colors duration-300 hover:border-accent/60"
+      whileHover={{ y: -6 }}
+      transition={{ type: "spring", stiffness: 300, damping: 24 }}
+      className="group flex flex-col overflow-hidden border border-border bg-background transition-[color,background-color,border-color,box-shadow] duration-300 hover:border-accent/60 hover:shadow-[0_24px_48px_-28px_rgba(27,23,18,0.35)]"
     >
       <div className="relative">
         <PlaceholderImage
@@ -34,6 +41,6 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
           />
         </span>
       </div>
-    </Link>
+    </MotionLink>
   );
 }

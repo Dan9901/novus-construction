@@ -1,7 +1,12 @@
+"use client";
+
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+const MotionLink = motion.create(Link);
 
 type ButtonVariant = "primary" | "dark" | "outline" | "outline-light" | "ghost";
 type ButtonSize = "md" | "lg";
@@ -46,8 +51,11 @@ const variantClasses: Record<ButtonVariant, string> = {
 const baseClasses =
   "group inline-flex items-center justify-center gap-2.5 whitespace-nowrap font-semibold uppercase tracking-[0.08em] transition-colors duration-300 focus-visible:outline-offset-4 disabled:opacity-50 disabled:pointer-events-none";
 
+const springTransition = { type: "spring" as const, stiffness: 420, damping: 24 };
+
 export function Button(props: ButtonProps) {
   const { children, variant = "primary", size = "md", className, showArrow = true } = props;
+  const isGhost = variant === "ghost";
 
   const classes = cn(
     baseClasses,
@@ -55,6 +63,16 @@ export function Button(props: ButtonProps) {
     variantClasses[variant],
     className
   );
+
+  // Ghost links are inline text — a lift/scale reads oddly there, so only the
+  // boxed variants get the physical hover/tap feedback.
+  const motionProps = isGhost
+    ? {}
+    : {
+        whileHover: { scale: 1.025, y: -1 },
+        whileTap: { scale: 0.97, y: 0 },
+        transition: springTransition,
+      };
 
   const content = (
     <>
@@ -72,32 +90,34 @@ export function Button(props: ButtonProps) {
     const isInternal = props.href.startsWith("/") || props.href.startsWith("#");
     if (isInternal) {
       return (
-        <Link href={props.href} onClick={props.onClick} className={classes}>
+        <MotionLink href={props.href} onClick={props.onClick} className={classes} {...motionProps}>
           {content}
-        </Link>
+        </MotionLink>
       );
     }
     return (
-      <a
+      <motion.a
         href={props.href}
         onClick={props.onClick}
         className={classes}
+        {...motionProps}
         {...(props.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >
         {content}
-      </a>
+      </motion.a>
     );
   }
 
   const buttonProps = props as ButtonAsButtonProps;
   return (
-    <button
+    <motion.button
       type={buttonProps.type ?? "button"}
       onClick={buttonProps.onClick}
       disabled={buttonProps.disabled}
       className={classes}
+      {...motionProps}
     >
       {content}
-    </button>
+    </motion.button>
   );
 }

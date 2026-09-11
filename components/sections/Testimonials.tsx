@@ -1,4 +1,7 @@
+"use client";
+
 import { Quote } from "lucide-react";
+import { motion } from "motion/react";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -24,7 +27,11 @@ export function Testimonials() {
         <div className="mx-auto mt-14 grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2">
           {testimonials.map((testimonial, index) => (
             <Reveal key={testimonial.attribution + index} delay={index * 80}>
-              <figure className="flex h-full flex-col gap-6 border border-border bg-background p-7">
+              <motion.figure
+                whileHover={{ y: -4 }}
+                transition={{ type: "spring", stiffness: 300, damping: 24 }}
+                className="flex h-full flex-col gap-6 border border-border bg-background p-7 transition-shadow duration-300 hover:shadow-[0_24px_48px_-28px_rgba(27,23,18,0.3)]"
+              >
                 <Quote className="h-7 w-7 text-accent" aria-hidden strokeWidth={1.4} />
                 <blockquote className="flex-1 text-[15px] leading-relaxed text-foreground-soft">
                   &ldquo;{testimonial.quote}&rdquo;
@@ -35,7 +42,7 @@ export function Testimonials() {
                     <p className="text-xs text-muted">{testimonial.location}</p>
                   ) : null}
                 </figcaption>
-              </figure>
+              </motion.figure>
             </Reveal>
           ))}
         </div>
