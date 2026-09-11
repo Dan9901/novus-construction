@@ -7,7 +7,7 @@ import { useIsClient } from "@/lib/useIsClient";
 import { getLenis } from "@/lib/lenis";
 
 const COUNT_SECONDS = 1.25;
-const PANELS = 5;
+const PANELS = 6;
 const SESSION_KEY = "novus:intro-played";
 
 let decision: boolean | null = null;
@@ -80,18 +80,31 @@ export function Preloader() {
           aria-hidden
           exit={{ transition: { duration: 0 } }}
         >
-          <div className="absolute inset-0 flex">
-            {Array.from({ length: PANELS }).map((_, index) => (
-              <motion.div
-                key={index}
-                className="h-full flex-1 bg-background"
-                initial={{ y: "0%" }}
-                exit={{
-                  y: "-100%",
-                  transition: { duration: 0.85, ease: [0.76, 0, 0.24, 1], delay: index * 0.06 },
-                }}
-              />
-            ))}
+          {/* Sheared and oversized so the lift reads as a diagonal sweep rather
+              than a row of shutters, matching the route transition. */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div
+              className="absolute flex"
+              style={{
+                left: "-30%",
+                top: "-40%",
+                width: "160%",
+                height: "180%",
+                transform: "skewX(-14deg) skewY(-5deg)",
+              }}
+            >
+              {Array.from({ length: PANELS }).map((_, index) => (
+                <motion.div
+                  key={index}
+                  className="h-full flex-1 bg-background"
+                  initial={{ y: "0%" }}
+                  exit={{
+                    y: "-115%",
+                    transition: { duration: 0.85, ease: [0.76, 0, 0.24, 1], delay: index * 0.07 },
+                  }}
+                />
+              ))}
+            </div>
           </div>
 
           <motion.div

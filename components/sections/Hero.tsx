@@ -26,10 +26,11 @@ const item: Variants = {
 
 /** Registration marks, like the corners of a printed drawing sheet. */
 function CornerTicks() {
+  // Bottom-left is deliberately absent: the floating stat card overlaps that
+  // corner, and a mark peeking out from behind it reads as a mistake.
   const corners = [
     "left-0 top-0 border-l border-t",
     "right-0 top-0 border-r border-t",
-    "left-0 bottom-0 border-l border-b",
     "right-0 bottom-0 border-r border-b",
   ];
 
@@ -124,12 +125,6 @@ export function Hero() {
             className="relative aspect-[4/5] w-full border border-border bg-surface/50"
           >
             <CornerTicks />
-            <span
-              aria-hidden
-              className="pointer-events-none absolute right-4 top-4 z-10 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted sm:right-6 sm:top-6"
-            >
-              Dwg. 01 — Residential
-            </span>
             <HeroScene />
           </motion.div>
 
