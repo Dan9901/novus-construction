@@ -1,21 +1,27 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, animate, motion } from "motion/react";
 import { useIsClient } from "@/lib/useIsClient";
 import { getLenis } from "@/lib/lenis";
 
-const COUNT_SECONDS = 1.5;
+const COUNT_SECONDS = 1.25;
 const PANELS = 5;
 const SESSION_KEY = "novus:intro-played";
 
 let decision: boolean | null = null;
 
-/** Decided once per document: replays are skipped, as is reduced motion. */
-function shouldPlay(): boolean {
+/**
+ * Decided once per document. The intro is a front-door moment, so it is skipped
+ * on deep links: someone arriving on a service or project page came for that
+ * content, not for a brand animation.
+ */
+function shouldPlay(pathname: string): boolean {
   if (decision !== null) return decision;
   try {
     decision =
+      pathname === "/" &&
       sessionStorage.getItem(SESSION_KEY) !== "1" &&
       !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   } catch {
@@ -31,11 +37,12 @@ function shouldPlay(): boolean {
  * beneath it the whole time, so it costs nothing in crawlability.
  */
 export function Preloader() {
+  const pathname = usePathname();
   const isClient = useIsClient();
   const [finished, setFinished] = useState(false);
   const [count, setCount] = useState(0);
 
-  const active = isClient && !finished && shouldPlay();
+  const active = isClient && !finished && shouldPlay(pathname);
 
   useEffect(() => {
     if (!active) return;
@@ -50,7 +57,7 @@ export function Preloader() {
       duration: COUNT_SECONDS,
       ease: [0.22, 1, 0.36, 1],
       onUpdate: (value) => setCount(Math.round(value)),
-      onComplete: () => window.setTimeout(() => setFinished(true), 240),
+      onComplete: () => window.setTimeout(() => setFinished(true), 180),
     });
 
     const { overflow } = document.body.style;

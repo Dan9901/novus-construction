@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
+import { SplitText } from "@/components/ui/SplitText";
 import { cn } from "@/lib/utils";
 
 export function PageHeader({
@@ -18,20 +19,23 @@ export function PageHeader({
   return (
     <section className={cn("border-b border-border bg-surface py-16 sm:py-20", className)}>
       <Container>
-        <Reveal>
-          <div className={cn("max-w-2xl", align === "center" && "mx-auto text-center")}>
-            <span className="mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-              <span className="h-px w-8 bg-accent" aria-hidden />
-              {eyebrow}
+        <div className={cn("max-w-2xl", align === "center" && "mx-auto text-center")}>
+          <Reveal>
+            <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+              [&nbsp;{eyebrow}&nbsp;]
             </span>
-            <h1 className="font-display text-4xl font-medium leading-[1.08] tracking-tight text-balance sm:text-5xl">
-              {title}
-            </h1>
-            {description ? (
+          </Reveal>
+
+          <h1 className="font-display text-4xl font-medium leading-[1.08] tracking-tight sm:text-5xl">
+            <SplitText text={title} onScroll delay={0.08} />
+          </h1>
+
+          {description ? (
+            <Reveal delay={220}>
               <p className="mt-5 text-base leading-relaxed text-muted sm:text-lg">{description}</p>
-            ) : null}
-          </div>
-        </Reveal>
+            </Reveal>
+          ) : null}
+        </div>
       </Container>
     </section>
   );
