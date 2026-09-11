@@ -16,6 +16,7 @@ export function ServicesGrid() {
           <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
             <SectionHeading
               eyebrow="What We Do"
+              eyebrowStyle="bracket"
               title="Construction Services"
               description="In restoring the past and building the future, we have a wealth of services — here is an introduction to all of them."
             />

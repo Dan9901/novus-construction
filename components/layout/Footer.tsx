@@ -96,11 +96,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col gap-4 border-t border-background/10 pt-8 text-xs text-background/50 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-16 border-t border-background/10 pt-8 text-xs text-background/50">
           <p>
             &copy; {year} {siteConfig.name} Ltd. All rights reserved.
           </p>
-          <p>Placeholder content for demonstration purposes.</p>
         </div>
       </Container>
     </footer>

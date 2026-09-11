@@ -16,6 +16,7 @@ export function FeaturedProjects() {
           <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
             <SectionHeading
               eyebrow="Our Work"
+              eyebrowStyle="bracket"
               title="Recent Projects"
               description="Our service is outstanding, and the quality of work we do speaks for itself — but do have a look at some of the work we've done and be amazed."
             />

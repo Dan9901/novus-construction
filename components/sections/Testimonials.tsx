@@ -17,6 +17,7 @@ export function Testimonials() {
         <Reveal>
           <SectionHeading
             eyebrow="Client Feedback"
+            eyebrowStyle="bracket"
             title="What Clients Say"
             description="A couple of words from clients we've had the pleasure of building for."
             align="center"

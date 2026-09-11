@@ -6,7 +6,6 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyMobileBar } from "@/components/layout/StickyMobileBar";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
-import { CursorFollower } from "@/components/ui/CursorFollower";
 import { siteConfig } from "@/data/site-config";
 import "./globals.css";
 
@@ -70,7 +69,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
         <MotionConfig reducedMotion="user">
           <ScrollProgress />
-          <CursorFollower />
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />

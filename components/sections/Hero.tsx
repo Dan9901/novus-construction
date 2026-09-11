@@ -26,7 +26,7 @@ export function Hero() {
   const gridY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden border-b border-border bg-background">
+    <section ref={sectionRef} className="relative overflow-hidden bg-background">
       <motion.div
         aria-hidden
         className="pointer-events-none absolute inset-0"
@@ -42,15 +42,14 @@ export function Hero() {
         <motion.div initial="hidden" animate="visible" variants={container}>
           <motion.span
             variants={item}
-            className="mb-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-accent"
+            className="mb-6 inline-block text-xs font-semibold uppercase tracking-[0.22em] text-accent"
           >
-            <span className="h-px w-8 bg-accent" aria-hidden />
-            Building in Ireland Since {siteConfig.founded}
+            [&nbsp;Building in Ireland Since {siteConfig.founded}&nbsp;]
           </motion.span>
 
           <motion.h1
             variants={item}
-            className="font-display text-4xl font-medium leading-[1.05] tracking-tight text-balance sm:text-5xl md:text-6xl"
+            className="font-display text-4xl font-medium leading-[1.02] tracking-tight text-balance sm:text-6xl md:text-7xl"
           >
             Building the Future, Restoring the Past.
           </motion.h1>

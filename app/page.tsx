@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/Hero";
+import { MetaBar } from "@/components/sections/MetaBar";
 import { TrustIntro } from "@/components/sections/TrustIntro";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <MetaBar />
       <TrustIntro />
       <ServicesGrid />
       <FeaturedProjects />

@@ -14,6 +14,7 @@ export function Process() {
         <Reveal>
           <SectionHeading
             eyebrow="How It Works"
+            eyebrowStyle="bracket"
             title="Our Process"
             description="From pre-construction services, where the practical aspects of your project are analysed, through to the post-construction phase — we're with you the whole way."
             tone="dark"
