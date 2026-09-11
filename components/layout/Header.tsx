@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { GoogleGlyph } from "@/components/icons/SocialIcons";
 import { navLinks } from "@/data/nav";
 import { siteConfig } from "@/data/site-config";
 import { cn } from "@/lib/utils";
@@ -50,7 +51,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-6 lg:flex">
+        <div className="hidden items-center gap-5 lg:flex">
           <a
             href={siteConfig.phoneHref}
             className="flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-accent"
@@ -58,6 +59,18 @@ export function Header() {
             <Phone className="h-4 w-4" aria-hidden />
             {siteConfig.phoneDisplay}
           </a>
+
+          <a
+            href={siteConfig.googleProfileUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${siteConfig.name} on Google — opens in a new tab`}
+            title={`${siteConfig.name} on Google`}
+            className="flex h-9 w-9 items-center justify-center border border-border transition-colors hover:border-accent"
+          >
+            <GoogleGlyph className="h-[17px] w-[17px]" />
+          </a>
+
           <Button href="/contact">Request a Quote</Button>
         </div>
 

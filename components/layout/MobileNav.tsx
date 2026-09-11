@@ -7,6 +7,7 @@ import { Menu, Phone, X } from "lucide-react";
 import { navLinks } from "@/data/nav";
 import { siteConfig } from "@/data/site-config";
 import { Button } from "@/components/ui/Button";
+import { GoogleGlyph } from "@/components/icons/SocialIcons";
 import { cn } from "@/lib/utils";
 import { useIsClient } from "@/lib/useIsClient";
 
@@ -60,14 +61,28 @@ export function MobileNav() {
         </nav>
 
         <div className="mt-10 flex flex-col gap-4">
-          <a
-            href={siteConfig.phoneHref}
-            onClick={() => setOpen(false)}
-            className="flex items-center gap-3 text-lg font-semibold text-foreground"
-          >
-            <Phone className="h-5 w-5 text-accent" aria-hidden />
-            {siteConfig.phoneDisplay}
-          </a>
+          <div className="flex items-center justify-between gap-4">
+            <a
+              href={siteConfig.phoneHref}
+              onClick={() => setOpen(false)}
+              className="flex items-center gap-3 text-lg font-semibold text-foreground"
+            >
+              <Phone className="h-5 w-5 text-accent" aria-hidden />
+              {siteConfig.phoneDisplay}
+            </a>
+
+            <a
+              href={siteConfig.googleProfileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              aria-label={`${siteConfig.name} on Google — opens in a new tab`}
+              className="flex h-11 w-11 shrink-0 items-center justify-center border border-border transition-colors hover:border-accent"
+            >
+              <GoogleGlyph className="h-5 w-5" />
+            </a>
+          </div>
+
           <Button href="/contact" size="lg" className="w-full justify-center" onClick={() => setOpen(false)}>
             Request a Quote
           </Button>
