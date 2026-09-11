@@ -7,6 +7,7 @@ import { navLinks } from "@/data/nav";
 import { services } from "@/data/services";
 import { siteConfig } from "@/data/site-config";
 import { Logo } from "./Logo";
+import { FooterWordmark } from "./FooterWordmark";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -101,6 +102,8 @@ export function Footer() {
             &copy; {year} {siteConfig.name} Ltd. All rights reserved.
           </p>
         </div>
+
+        <FooterWordmark />
       </Container>
     </footer>
   );

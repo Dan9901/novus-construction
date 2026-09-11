@@ -2,7 +2,8 @@ import { Hero } from "@/components/sections/Hero";
 import { MetaBar } from "@/components/sections/MetaBar";
 import { TrustIntro } from "@/components/sections/TrustIntro";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
-import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
+import { ProjectsShowcase } from "@/components/sections/ProjectsShowcase";
+import { ServicesMarquee } from "@/components/sections/ServicesMarquee";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { Process } from "@/components/sections/Process";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -15,7 +16,8 @@ export default function Home() {
       <MetaBar />
       <TrustIntro />
       <ServicesGrid />
-      <FeaturedProjects />
+      <ProjectsShowcase />
+      <ServicesMarquee />
       <WhyUs />
       <Process />
       <Testimonials />
