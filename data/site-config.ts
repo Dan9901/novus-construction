@@ -10,7 +10,7 @@ export const siteConfig = {
   email: "novusconstruction@yahoo.ie",
   emailHref: "mailto:novusconstruction@yahoo.ie",
   hours: "Mon – Fri, 8:00 – 17:00",
-  founded: 2016,
+  founded: 2014,
   stats: [
     { value: "10+", label: "Years Experience" },
     { value: "55+", label: "Projects Completed" },
