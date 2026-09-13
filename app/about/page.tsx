@@ -10,6 +10,7 @@ import { ImageReveal } from "@/components/ui/ImageReveal";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { siteConfig } from "@/data/site-config";
 import { values } from "@/data/values";
+import { photos } from "@/data/photos";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -31,11 +32,11 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <ImageReveal className="w-full">
               <PlaceholderImage
-                label="Recent Kitchen Project"
+                label={photos.sageKitchenRun.alt}
                 category="site"
                 ratio="aspect-[4/5]"
                 className="w-full"
-                src="/projects/house-a-interior.jpg"
+                src={photos.sageKitchenRun.src}
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </ImageReveal>

@@ -1,4 +1,5 @@
 import type { PlaceholderCategory } from "@/lib/types";
+import { photos, type Photo } from "@/data/photos";
 
 export type Service = {
   slug: string;
@@ -8,8 +9,9 @@ export type Service = {
   includes: string[];
   placeholderTag: string;
   placeholderCategory: PlaceholderCategory;
-  /** Optional sample photo (path under /public) shown instead of the abstract placeholder. */
-  image?: string;
+  image?: Photo;
+  /** Further examples of this kind of work, shown as a gallery on the service page. */
+  gallery?: Photo[];
 };
 
 export const services: Service[] = [
@@ -31,7 +33,8 @@ export const services: Service[] = [
     ],
     placeholderCategory: "house",
     placeholderTag: "New Build",
-    image: "/samples/exterior-brick.jpg",
+    image: photos.newBuildBrickSlate,
+    gallery: [photos.newBuildBrickSlate, photos.newBuildBrickGable, photos.newBuildBrickCornerGlazing, photos.newBuildSlateRoof, photos.newBuildRoofBattens],
   },
   {
     slug: "extensions",
@@ -51,7 +54,8 @@ export const services: Service[] = [
     ],
     placeholderCategory: "extension",
     placeholderTag: "Extension",
-    image: "/projects/house-b-exterior.jpg",
+    image: photos.extensionFlatRoofGlazing,
+    gallery: [photos.extensionFlatRoofGlazing, photos.skylitExtensionGarden, photos.twoStoreyExterior, photos.courtyardGlazedCorner, photos.extensionGableSlidingDoors, photos.extensionPitchedRoofRooflights],
   },
   {
     slug: "renovations",
@@ -71,6 +75,8 @@ export const services: Service[] = [
     ],
     placeholderCategory: "renovation",
     placeholderTag: "Renovation",
+    image: photos.twoStoreyGardenRoom,
+    gallery: [photos.twoStoreyGardenRoom, photos.openPlanKitchenLiving, photos.openPlanStoneFireplace, photos.courtyardHallwayStairs, photos.openPlanLivingOakDoors],
   },
   {
     slug: "refurbishments",
@@ -90,6 +96,8 @@ export const services: Service[] = [
     ],
     placeholderCategory: "site",
     placeholderTag: "Refurbishment",
+    image: photos.refurbishmentPeriodCottage,
+    gallery: [photos.refurbishmentPeriodCottage, photos.refurbishmentBrickCottage, photos.openPlanFireplaceWall, photos.refurbishmentBedroom],
   },
   {
     slug: "kitchens",
@@ -109,7 +117,8 @@ export const services: Service[] = [
     ],
     placeholderCategory: "kitchen",
     placeholderTag: "Kitchen",
-    image: "/projects/house-a-kitchen.jpg",
+    image: photos.openPlanHandlelessKitchen,
+    gallery: [photos.openPlanHandlelessKitchen, photos.sageKitchenIsland, photos.skylitKitchenIsland, photos.twoStoreyKitchenWide, photos.singleStoreyKitchen, photos.sageKitchenRun],
   },
   {
     slug: "bathrooms",
@@ -129,6 +138,8 @@ export const services: Service[] = [
     ],
     placeholderCategory: "bathroom",
     placeholderTag: "Bathroom",
+    image: photos.bathroomFreestandingBath,
+    gallery: [photos.bathroomFreestandingBath, photos.bathroomMetroTiles, photos.courtyardGreenShower, photos.bathroomMarbleVanity, photos.bathroomTiledBath, photos.bathroomCornerShower, photos.bathroomWalkInShower],
   },
   {
     slug: "general-building",
@@ -148,6 +159,8 @@ export const services: Service[] = [
     ],
     placeholderCategory: "generic",
     placeholderTag: "General Building",
+    image: photos.generalBuildingDriveway,
+    gallery: [photos.generalBuildingDriveway, photos.skylitExtensionLandscaping, photos.newBuildRoofBattens, photos.roofingFlatRoofRooflights, photos.skylitExtensionRoof],
   },
   {
     slug: "structural-engineering",
@@ -167,6 +180,8 @@ export const services: Service[] = [
     ],
     placeholderCategory: "site",
     placeholderTag: "Structural Engineering",
+    image: photos.structuralRoofFrame,
+    gallery: [photos.structuralRoofFrame, photos.structuralRafters, photos.structuralSpiralStair, photos.newBuildRoofMembrane],
   },
   {
     slug: "grants",
@@ -186,6 +201,7 @@ export const services: Service[] = [
     ],
     placeholderCategory: "generic",
     placeholderTag: "Grants",
+    image: photos.roofingFlatRoofRooflight,
   },
 ];
 

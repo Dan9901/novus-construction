@@ -41,6 +41,8 @@ type PlaceholderImageProps = {
   src?: string;
   priority?: boolean;
   sizes?: string;
+  /** "contain" shows the whole photo — needed wherever portrait shots mustn't be cropped. */
+  fit?: "cover" | "contain";
 };
 
 export function PlaceholderImage({
@@ -54,6 +56,7 @@ export function PlaceholderImage({
   src,
   priority,
   sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+  fit = "cover",
 }: PlaceholderImageProps) {
   if (src) {
     return (
@@ -64,7 +67,11 @@ export function PlaceholderImage({
           fill
           priority={priority}
           sizes={sizes}
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+          className={cn(
+            fit === "contain"
+              ? "object-contain"
+              : "object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+          )}
         />
       </div>
     );

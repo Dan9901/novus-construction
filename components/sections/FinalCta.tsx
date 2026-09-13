@@ -9,6 +9,7 @@ import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { Reveal } from "@/components/ui/Reveal";
 import { GrainOverlay } from "@/components/ui/GrainOverlay";
 import { siteConfig } from "@/data/site-config";
+import { photos } from "@/data/photos";
 
 export function FinalCta() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -20,13 +21,14 @@ export function FinalCta() {
 
   return (
     <section ref={sectionRef} className="relative overflow-hidden bg-foreground text-background">
-      <motion.div className="absolute inset-0 opacity-35" style={{ y }}>
+      <motion.div className="absolute inset-0 opacity-35" style={{ y }} aria-hidden>
         <PlaceholderImage
-          label="Site Under Construction"
+          label={photos.structuralRafters.alt}
           category="site"
           ratio="h-full w-full"
           showLabel={false}
-          iconClassName="h-20 w-20 sm:h-28 sm:w-28"
+          src={photos.structuralRafters.src}
+          sizes="100vw"
           className="scale-125"
         />
       </motion.div>

@@ -28,12 +28,12 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
       />
       <div className="relative">
         <PlaceholderImage
-          label={project.name}
+          label={project.image.alt}
           category={projectCategoryPlaceholder[project.category]}
           ratio="aspect-[4/3]"
           index={index}
           showLabel={false}
-          src={project.image}
+          src={project.image.src}
         />
         <div className="absolute left-3 top-3">
           <Badge className="bg-background/90">{project.categoryLabel}</Badge>

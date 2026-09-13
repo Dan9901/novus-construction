@@ -26,11 +26,11 @@ export function ServiceCard({ service, index = 0 }: { service: Service; index?: 
         style={{ background }}
       />
       <PlaceholderImage
-        label={service.placeholderTag}
+        label={service.image?.alt ?? service.placeholderTag}
         category={service.placeholderCategory}
         ratio="aspect-[4/3]"
         index={index}
-        src={service.image}
+        src={service.image?.src}
       />
       <div className="flex flex-1 flex-col gap-3 p-6">
         <h3 className="font-display text-xl font-medium tracking-tight">{service.title}</h3>

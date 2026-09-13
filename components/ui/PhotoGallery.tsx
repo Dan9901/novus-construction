@@ -3,33 +3,13 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
-import { projectCategoryPlaceholder, type ProjectCategory } from "@/data/projects";
+import type { Photo } from "@/data/photos";
 
-type GalleryPhoto = { label: string; src?: string };
-
-export function ProjectGallery({
-  projectName,
-  category,
-  count,
-  photos,
-}: {
-  projectName: string;
-  category: ProjectCategory;
-  count: number;
-  photos?: GalleryPhoto[];
-}) {
-  const images: GalleryPhoto[] =
-    photos && photos.length > 0
-      ? photos
-      : Array.from({ length: count }, (_, index) => ({
-          label: `${projectName} — Photo ${index + 1}`,
-        }));
-
+export function PhotoGallery({ title, photos }: { title: string; photos: Photo[] }) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
   const thumbnailRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const lastOpenedIndex = useRef<number | null>(null);
-  const placeholderCategory = projectCategoryPlaceholder[category];
 
   const openAt = (index: number) => {
     lastOpenedIndex.current = index;
@@ -39,18 +19,16 @@ export function ProjectGallery({
   const close = useCallback(() => {
     setActiveIndex(null);
     const openedIndex = lastOpenedIndex.current;
-    if (openedIndex !== null) {
-      thumbnailRefs.current[openedIndex]?.focus();
-    }
+    if (openedIndex !== null) thumbnailRefs.current[openedIndex]?.focus();
   }, []);
 
   const showPrev = useCallback(() => {
-    setActiveIndex((current) => (current === null ? null : (current - 1 + images.length) % images.length));
-  }, [images.length]);
+    setActiveIndex((current) => (current === null ? null : (current - 1 + photos.length) % photos.length));
+  }, [photos.length]);
 
   const showNext = useCallback(() => {
-    setActiveIndex((current) => (current === null ? null : (current + 1) % images.length));
-  }, [images.length]);
+    setActiveIndex((current) => (current === null ? null : (current + 1) % photos.length));
+  }, [photos.length]);
 
   useEffect(() => {
     if (activeIndex === null) return;
@@ -72,43 +50,43 @@ export function ProjectGallery({
     };
   }, [activeIndex, close, showPrev, showNext]);
 
+  const active = activeIndex === null ? null : photos[activeIndex];
+
   return (
     <div>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-        {images.map((image, index) => (
+        {photos.map((photo, index) => (
           <button
-            key={image.label}
+            key={photo.src}
             ref={(el) => {
               thumbnailRefs.current[index] = el;
             }}
             type="button"
             onClick={() => openAt(index)}
-            className="group text-left"
-            aria-label={`Open photo ${index + 1} of ${images.length}`}
+            className="group overflow-hidden text-left"
+            aria-label={`Open photo ${index + 1} of ${photos.length}: ${photo.alt}`}
           >
             <PlaceholderImage
-              label={image.src ? image.label : `Photo ${index + 1}`}
-              category={placeholderCategory}
+              label={photo.alt}
               ratio="aspect-square"
-              index={index}
-              src={image.src}
+              src={photo.src}
               sizes="(max-width: 640px) 50vw, 33vw"
-              className="transition-opacity duration-300 group-hover:opacity-85"
+              className="transition-opacity duration-300 group-hover:opacity-90"
             />
           </button>
         ))}
       </div>
 
-      {activeIndex !== null ? (
+      {active !== null && activeIndex !== null ? (
         <div
           role="dialog"
           aria-modal="true"
-          aria-label={`${projectName} photo gallery`}
+          aria-label={`${title} photo gallery`}
           className="fixed inset-0 z-[60] flex flex-col bg-foreground/97 backdrop-blur-sm"
         >
           <div className="flex items-center justify-between px-5 py-4 sm:px-8">
             <p className="text-sm font-medium text-background/70">
-              {activeIndex + 1} / {images.length}
+              {activeIndex + 1} / {photos.length}
             </p>
             <button
               ref={closeButtonRef}
@@ -121,37 +99,38 @@ export function ProjectGallery({
             </button>
           </div>
 
-          <div className="relative flex flex-1 items-center justify-center px-4 pb-8 sm:px-16">
+          <div className="relative flex flex-1 items-center justify-center px-4 sm:px-20">
             <button
               type="button"
               onClick={showPrev}
               aria-label="Previous photo"
-              className="absolute left-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-background/25 text-background transition-colors hover:border-accent hover:text-accent sm:left-6"
+              className="absolute left-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-background/25 bg-foreground/60 text-background transition-colors hover:border-accent hover:text-accent sm:left-6"
             >
               <ChevronLeft className="h-5 w-5" aria-hidden />
             </button>
 
-            <div className="w-full max-w-3xl">
-              <PlaceholderImage
-                label={images[activeIndex].label}
-                category={placeholderCategory}
-                ratio="aspect-[4/3]"
-                index={activeIndex}
-                src={images[activeIndex].src}
-                sizes="(max-width: 1024px) 100vw, 768px"
-                className="w-full"
-              />
-            </div>
+            {/* Contained, not cropped: most interior shots here are portrait. */}
+            <PlaceholderImage
+              key={active.src}
+              label={active.alt}
+              ratio="h-[68vh] w-full max-w-5xl"
+              src={active.src}
+              fit="contain"
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="bg-transparent"
+            />
 
             <button
               type="button"
               onClick={showNext}
               aria-label="Next photo"
-              className="absolute right-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-background/25 text-background transition-colors hover:border-accent hover:text-accent sm:right-6"
+              className="absolute right-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-background/25 bg-foreground/60 text-background transition-colors hover:border-accent hover:text-accent sm:right-6"
             >
               <ChevronRight className="h-5 w-5" aria-hidden />
             </button>
           </div>
+
+          <p className="px-6 pb-7 pt-4 text-center text-sm text-background/75">{active.alt}</p>
         </div>
       ) : null}
     </div>

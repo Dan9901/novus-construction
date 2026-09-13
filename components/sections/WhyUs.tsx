@@ -12,6 +12,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { Reveal } from "@/components/ui/Reveal";
 import { whyUsPoints, type WhyUsPoint } from "@/data/why-us";
+import { photos } from "@/data/photos";
 
 const iconMap: Record<WhyUsPoint["icon"], typeof Users> = {
   users: Users,
@@ -29,11 +30,11 @@ export function WhyUs() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           <Reveal>
             <PlaceholderImage
-              label="Recent Interior Finish"
+              label={photos.courtyardHallwayStairs.alt}
               category="team"
               ratio="aspect-[3/4]"
               className="w-full lg:sticky lg:top-28"
-              src="/projects/house-b-interior.jpg"
+              src={photos.courtyardHallwayStairs.src}
               sizes="(max-width: 1024px) 100vw, 45vw"
             />
           </Reveal>

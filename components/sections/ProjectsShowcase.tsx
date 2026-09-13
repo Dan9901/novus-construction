@@ -21,12 +21,12 @@ function ProjectPanel({ project, index }: { project: Project; index: number }) {
     >
       <div className="relative flex-1 overflow-hidden border border-background/15">
         <PlaceholderImage
-          label={project.name}
+          label={project.image.alt}
           category={projectCategoryPlaceholder[project.category]}
           ratio="h-full w-full"
           index={index}
           showLabel={false}
-          src={project.image}
+          src={project.image.src}
           sizes="(max-width: 640px) 78vw, (max-width: 1024px) 58vw, 34vw"
         />
         <div

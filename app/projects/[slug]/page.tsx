@@ -7,12 +7,8 @@ import { Button } from "@/components/ui/Button";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { Reveal } from "@/components/ui/Reveal";
 import { ImageReveal } from "@/components/ui/ImageReveal";
-import { ProjectGallery } from "@/components/projects/ProjectGallery";
-import {
-  getProjectBySlug,
-  projectCategoryPlaceholder,
-  projects,
-} from "@/data/projects";
+import { PhotoGallery } from "@/components/ui/PhotoGallery";
+import { getProjectBySlug, projects } from "@/data/projects";
 
 export async function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -30,15 +26,17 @@ export async function generateMetadata({
   return {
     title: `${project.name} — ${project.categoryLabel}`,
     description: project.summary,
+    openGraph: { images: [project.image.src] },
   };
 }
 
-const detailFields = (project: NonNullable<ReturnType<typeof getProjectBySlug>>) => [
-  { label: "Project Type", value: project.categoryLabel },
-  { label: "Location", value: project.location },
-  { label: "Duration", value: project.duration },
-  { label: "Scope", value: project.scope },
-];
+const detailFields = (project: NonNullable<ReturnType<typeof getProjectBySlug>>) =>
+  [
+    { label: "Project Type", value: project.categoryLabel },
+    { label: "Location", value: project.location },
+    { label: "Duration", value: project.duration },
+    { label: "Scope", value: project.scope },
+  ].filter((field): field is { label: string; value: string } => Boolean(field.value));
 
 export default async function ProjectDetailPage({
   params,
@@ -75,11 +73,11 @@ export default async function ProjectDetailPage({
         <Container>
           <ImageReveal className="w-full">
             <PlaceholderImage
-              label={`${project.name} — Main Image`}
-              category={projectCategoryPlaceholder[project.category]}
+              label={project.image.alt}
               ratio="aspect-[16/9]"
               className="w-full"
-              src={project.image}
+              src={project.image.src}
+              sizes="(max-width: 1280px) 100vw, 1224px"
               priority
             />
           </ImageReveal>
@@ -120,19 +118,10 @@ export default async function ProjectDetailPage({
         <Container>
           <Reveal>
             <h2 className="font-display text-2xl font-medium tracking-tight">Photo Gallery</h2>
-            <p className="mt-2 text-sm text-muted">
-              {project.images
-                ? "Select any photo to open the full-size viewer."
-                : "Placeholder gallery — select any photo to open the full-size viewer."}
-            </p>
+            <p className="mt-2 text-sm text-muted">Select any photo to open the full-size viewer.</p>
           </Reveal>
           <div className="mt-8">
-            <ProjectGallery
-              projectName={project.name}
-              category={project.category}
-              count={project.galleryCount}
-              photos={project.images}
-            />
+            <PhotoGallery title={project.name} photos={project.images} />
           </div>
         </Container>
       </Section>

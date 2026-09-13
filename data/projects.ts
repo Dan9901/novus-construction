@@ -1,4 +1,5 @@
 import type { PlaceholderCategory } from "@/lib/types";
+import { photos, type Photo } from "@/data/photos";
 
 export type ProjectCategory =
   | "new-builds"
@@ -26,136 +27,168 @@ export type Project = {
   name: string;
   category: ProjectCategory;
   categoryLabel: string;
-  location: string;
-  duration: string;
+  /** Only shown when set — leave out rather than guess. */
+  location?: string;
+  /** Only shown when set — leave out rather than guess. */
+  duration?: string;
   scope: string;
   summary: string;
   description: string[];
-  galleryCount: number;
-  /** Optional sample photo (path under /public) shown instead of the abstract placeholder. */
-  image?: string;
-  /** Optional real gallery photos (path under /public). When set, these replace the abstract gallery placeholders. */
-  images?: { src: string; label: string }[];
+  image: Photo;
+  images: Photo[];
 };
 
 export const projects: Project[] = [
   {
-    slug: "house-x",
-    name: "House X",
-    category: "renovations",
-    categoryLabel: "Residential Renovation",
-    location: "Co. Dublin, Ireland",
-    duration: "14 weeks",
-    scope: "Full internal renovation",
+    slug: "contemporary-courtyard-home",
+    name: "Contemporary Courtyard Home",
+    category: "extensions",
+    categoryLabel: "Courtyard Extension & Interior",
+    scope: "Glazed extension, joinery and bathrooms",
     summary:
-      "A full renovation bringing a dated family home up to a modern standard, with a new open-plan kitchen and living space at its heart.",
+      "A contemporary home arranged around a private courtyard, with frameless glazing, terrazzo floors and oak joinery throughout.",
     description: [
-      "This project began with a full strip-out of the existing layout, which no longer suited how the family lived day to day. Working closely with the homeowners, we redesigned the ground floor around an open-plan kitchen and living space, removing internal walls to bring in more light and improve the flow between rooms.",
-      "New electrics, plumbing and insulation were installed throughout, along with fresh plastering, flooring and joinery to bring the finish up to a modern standard without losing the character of the original house.",
-      "The result is a home that works for the way the family actually lives — brighter, more efficient, and finished to a standard that will last.",
+      "This project is built around a small paved courtyard. Frameless glazing wraps the corner of the new rooms so the courtyard reads as part of the living space and daylight reaches deep into the plan, with the original brick boundary wall kept as a backdrop.",
+      "Inside, a continuous terrazzo floor runs from the hallway through to the glazed rooms. Slatted timber screens divide spaces without closing them off, and full-height oak joinery hides storage along the walls.",
+      "The bathrooms carry the same level of detail, including a walk-in shower finished in green fish-scale tiles.",
     ],
-    galleryCount: 7,
-    image: "/samples/kitchen-modern.jpg",
+    image: photos.courtyardGlazedCorner,
+    images: [
+      photos.courtyardGlazedCorner,
+      photos.courtyardOakJoinery,
+      photos.courtyardTimberScreen,
+      photos.courtyardGarden,
+      photos.courtyardTerrazzoStep,
+      photos.courtyardTerrazzoHall,
+      photos.courtyardHallwayStairs,
+      photos.courtyardGreenShower,
+    ],
   },
   {
-    slug: "house-y",
-    name: "House Y",
+    slug: "skylit-kitchen-extension",
+    name: "Skylit Kitchen Extension",
+    category: "extensions",
+    categoryLabel: "Single-Storey Rear Extension",
+    scope: "Rear extension, kitchen and landscaping",
+    summary:
+      "A single-storey rear extension housing a painted Shaker kitchen, with rooflights overhead and bifold doors opening onto a new patio.",
+    description: [
+      "This single-storey extension adds a bright kitchen and dining space to the back of the house. Rooflights set into the tiled roof bring daylight down over the worktops, and bifold doors fold back fully to open the room to the garden.",
+      "The kitchen itself is a painted Shaker design with a large island, a round oak breakfast table and a full-height larder unit.",
+      "Outside, the garden was finished to match, with new paving, stepped access to the doors and timber fencing around the boundary.",
+    ],
+    image: photos.skylitKitchenBifolds,
+    images: [
+      photos.skylitKitchenBifolds,
+      photos.skylitKitchenIsland,
+      photos.skylitKitchenLarder,
+      photos.skylitExtensionGarden,
+      photos.skylitExtensionPatio,
+      photos.skylitExtensionBifoldDoors,
+      photos.skylitExtensionRoof,
+      photos.skylitExtensionLandscaping,
+    ],
+  },
+  {
+    slug: "sage-kitchen-dining",
+    name: "Sage Kitchen & Dining",
+    category: "interiors",
+    categoryLabel: "Kitchen & Dining Fit-Out",
+    scope: "Kitchen fit-out and exposed joist ceiling",
+    summary:
+      "A sage green kitchen and dining space beneath exposed timber joists, with rooflights letting daylight in between the beams.",
+    description: [
+      "The defining feature of this space is the ceiling: timber joists left exposed and finished, with rooflights set between them to bring daylight down into the room.",
+      "Below, a sage green kitchen runs along the wall with integrated ovens, open shelving and a white stone worktop that returns to form an island.",
+      "The dining area sits under the same joisted ceiling, so the kitchen and dining space read as one continuous, light-filled room.",
+    ],
+    image: photos.sageKitchenJoists,
+    images: [
+      photos.sageKitchenJoists,
+      photos.sageKitchenIsland,
+      photos.sageKitchenRun,
+      photos.sageKitchenDining,
+    ],
+  },
+  {
+    slug: "open-plan-renovation",
+    name: "Open-Plan Kitchen & Living",
+    category: "renovations",
+    categoryLabel: "Open-Plan Renovation",
+    scope: "Open-plan kitchen, living space and fireplace",
+    summary:
+      "An open-plan kitchen and living space with a vaulted ceiling, a handleless grey kitchen and a stone-clad feature fireplace.",
+    description: [
+      "This renovation opens the ground floor into one large kitchen and living space, with a vaulted ceiling and rooflights overhead and sliding doors out to the garden.",
+      "The kitchen is a handleless grey design with integrated ovens and a large island. Glazed oak double doors connect it to the rest of the house, and a polished tile floor runs throughout.",
+      "In the living room, the chimney breast was clad in stacked stone with an inset fire to create a feature wall.",
+    ],
+    image: photos.openPlanKitchenLiving,
+    images: [
+      photos.openPlanKitchenLiving,
+      photos.openPlanKitchenIsland,
+      photos.openPlanLivingOakDoors,
+      photos.openPlanHandlelessKitchen,
+      photos.openPlanStoneFireplace,
+      photos.openPlanFireplaceWall,
+    ],
+  },
+  {
+    slug: "two-storey-rear-extension",
+    name: "Two-Storey Rear Extension",
     category: "extensions",
     categoryLabel: "Two-Storey Extension",
-    location: "Co. Kildare, Ireland",
-    duration: "18 weeks",
-    scope: "Extension and structural works",
+    scope: "Two-storey extension, kitchen and flooring",
     summary:
-      "A two-storey extension adding significant living space to the rear of the property, including a new open-plan kitchen and an additional bedroom above.",
+      "A two-storey rear extension with a zinc-clad canopy, opening into a bright Shaker kitchen and garden room on a herringbone oak floor.",
     description: [
-      "This two-storey extension was designed to give the family the extra space they'd outgrown, without changing the character of the existing house. Structural works included new steel supports and foundations to tie the extension seamlessly into the original build.",
-      "At ground level, the extension created a large open-plan kitchen and dining area with sliding doors out to the garden. Upstairs, the additional floor space was used to add a fourth bedroom.",
-      "We managed the project from planning and structural design through to final finishes, keeping the family informed at every stage of the build.",
+      "This two-storey extension adds space across both floors at the back of the house. It is rendered to match the existing building, with a zinc-clad canopy over the ground floor and French doors opening onto the patio.",
+      "Inside, the ground floor becomes an open kitchen and living space. A white Shaker kitchen with an island sits beneath a rooflight, and a herringbone oak floor runs through to a sunlit garden room.",
     ],
-    galleryCount: 3,
-    image: "/projects/house-a-exterior.jpg",
+    image: photos.twoStoreyExterior,
     images: [
-      { src: "/projects/house-a-exterior.jpg", label: "House Y — Exterior" },
-      { src: "/projects/house-a-interior.jpg", label: "House Y — Open-Plan Living" },
-      { src: "/projects/house-a-kitchen.jpg", label: "House Y — Kitchen" },
+      photos.twoStoreyExterior,
+      photos.twoStoreyInterior,
+      photos.twoStoreyKitchenWide,
+      photos.twoStoreyKitchen,
+      photos.twoStoreyGardenRoom,
     ],
   },
   {
-    slug: "house-z",
-    name: "House Z",
+    slug: "brick-and-slate-new-build",
+    name: "Brick & Slate New Build",
     category: "new-builds",
     categoryLabel: "New Build Residence",
-    location: "Co. Wicklow, Ireland",
-    duration: "9 months",
-    scope: "Ground-up new build",
+    scope: "New build, roof structure and slating",
     summary:
-      "A new-build family home constructed from foundation through to final finish, designed for long-term comfort and energy efficiency.",
+      "A brick-built new home finished with a natural slate roof and rooflights, photographed from the roof structure through to completion.",
     description: [
-      "Built from the ground up, this family home was constructed to a high standard of energy efficiency, with insulation, glazing and heating systems specified to keep running costs low for years to come.",
-      "We managed every stage of the build in-house, from groundworks and structural build through to first and second fix, plastering, and final finishes.",
-      "The finished home reflects close collaboration with the owners throughout, from the initial design through to the small details that made it feel like theirs.",
+      "This new build is finished in red brick under a natural slate roof, with rooflights set into the slope and a flat-roofed single-storey section to the side.",
+      "The photos follow the roof from structure to finish: breathable membrane and battens fixed over the rafters, the slates going on around the rooflights, and the completed roofline.",
     ],
-    galleryCount: 8,
-    image: "/samples/exterior-brick.jpg",
+    image: photos.newBuildBrickSlate,
+    images: [
+      photos.newBuildRoofMembrane,
+      photos.newBuildRoofBattens,
+      photos.newBuildSlateRoof,
+      photos.newBuildBrickSlate,
+    ],
   },
   {
-    slug: "project-a",
-    name: "Project A",
-    category: "interiors",
-    categoryLabel: "Kitchen & Interior Fit-Out",
-    location: "Co. Dublin, Ireland",
-    duration: "6 weeks",
-    scope: "Kitchen and interior finishing",
-    summary:
-      "A complete kitchen fit-out finished with careful attention to detail, from cabinetry and worktops through to lighting and finishing touches.",
-    description: [
-      "This project focused on transforming a dated kitchen into a functional, modern space that works as the hub of the home. New cabinetry, worktops and integrated appliances were fitted throughout.",
-      "Lighting was reworked to suit both everyday cooking and entertaining, with task lighting over worktops and softer feature lighting elsewhere in the room.",
-      "Every detail, from cabinet hardware to tiling, was chosen and fitted with the same level of care as the larger structural elements of the job.",
-    ],
-    galleryCount: 6,
-    image: "/samples/kitchen-exposed-beam.jpg",
-  },
-  {
-    slug: "project-b",
-    name: "Project B",
-    category: "renovations",
-    categoryLabel: "Period Property Renovation",
-    location: "Co. Meath, Ireland",
-    duration: "16 weeks",
-    scope: "Sympathetic renovation",
-    summary:
-      "A sympathetic renovation preserving original character while modernising the interior for everyday family life.",
-    description: [
-      "Renovating a period property means balancing respect for the original building with the practical needs of a modern family. We worked carefully to retain original features — cornicing, fireplaces and joinery — while upgrading what lay beneath.",
-      "Behind the scenes, the house received all-new electrics, plumbing, insulation and heating, bringing it up to a modern standard without disturbing its character.",
-      "The finished renovation gives the family a comfortable, efficient home that still feels true to the building's original period.",
-    ],
-    galleryCount: 7,
-    image: "/samples/exterior-brick.jpg",
-  },
-  {
-    slug: "project-c",
-    name: "Project C",
+    slug: "single-storey-garden-extension",
+    name: "Single-Storey Garden Extension",
     category: "extensions",
     categoryLabel: "Single-Storey Extension",
-    location: "Co. Dublin, Ireland",
-    duration: "10 weeks",
-    scope: "Extension and open-plan conversion",
+    scope: "Rear extension, glazing and bespoke kitchen",
     summary:
-      "A single-storey extension opening up the rear of the home into one bright, open-plan living space.",
+      "A painted brick rear extension with full-width sliding glazing, exposed joists and a circular window, fitted with a bespoke oak kitchen.",
     description: [
-      "This single-storey extension was built to open up the rear of the house, replacing a cramped kitchen and separate dining room with one bright, open-plan space.",
-      "Large glazed doors were fitted to connect the new space to the garden, bringing in natural light throughout the day.",
-      "The project was completed with minimal disruption to the rest of the home, keeping the family comfortable throughout the build.",
+      "This single-storey extension is built in brick and painted white, with full-width sliding glazing across the rear so the room opens directly onto the garden.",
+      "Inside, the ceiling joists are left exposed and painted, with a rooflight bringing in extra daylight and a circular porthole window adding a distinctive detail.",
+      "The kitchen is bespoke oak joinery with full-height larder cupboards, deep drawers and a range cooker, shown here during fit-out.",
     ],
-    galleryCount: 3,
-    image: "/projects/house-b-exterior.jpg",
-    images: [
-      { src: "/projects/house-b-exterior.jpg", label: "Project C — Exterior" },
-      { src: "/projects/house-b-interior.jpg", label: "Project C — Roof & Window Detail" },
-      { src: "/projects/house-b-kitchen.jpg", label: "Project C — Kitchen" },
-    ],
+    image: photos.singleStoreyExterior,
+    images: [photos.singleStoreyExterior, photos.singleStoreyInterior, photos.singleStoreyKitchen],
   },
 ];
 

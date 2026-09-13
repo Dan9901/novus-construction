@@ -7,6 +7,7 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { Reveal } from "@/components/ui/Reveal";
+import { PhotoGallery } from "@/components/ui/PhotoGallery";
 import { getServiceBySlug, services } from "@/data/services";
 import { siteConfig } from "@/data/site-config";
 
@@ -26,6 +27,7 @@ export async function generateMetadata({
   return {
     title: service.title,
     description: service.shortDescription,
+    openGraph: service.image ? { images: [service.image.src] } : undefined,
   };
 }
 
@@ -68,11 +70,12 @@ export default async function ServiceDetailPage({
             <div>
               <Reveal>
                 <PlaceholderImage
-                  label={service.placeholderTag}
+                  label={service.image?.alt ?? service.placeholderTag}
                   category={service.placeholderCategory}
                   ratio="aspect-[16/10]"
                   className="w-full"
-                  src={service.image}
+                  src={service.image?.src}
+                  sizes="(max-width: 1024px) 100vw, 60vw"
                   priority
                 />
               </Reveal>
@@ -146,6 +149,22 @@ export default async function ServiceDetailPage({
           </div>
         </Container>
       </Section>
+
+      {service.gallery && service.gallery.length > 0 ? (
+        <Section tone="surface">
+          <Container>
+            <Reveal>
+              <h2 className="font-display text-2xl font-medium tracking-tight sm:text-3xl">
+                Recent Work
+              </h2>
+              <p className="mt-2 text-sm text-muted">Select any photo to open the full-size viewer.</p>
+            </Reveal>
+            <div className="mt-8">
+              <PhotoGallery title={service.title} photos={service.gallery} />
+            </div>
+          </Container>
+        </Section>
+      ) : null}
     </>
   );
 }
