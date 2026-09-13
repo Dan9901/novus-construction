@@ -27,7 +27,7 @@ export type Project = {
   name: string;
   category: ProjectCategory;
   categoryLabel: string;
-  /** Only shown when set — leave out rather than guess. */
+  /** Area only — never a street or house number. */
   location?: string;
   /** Only shown when set — leave out rather than guess. */
   duration?: string;
@@ -38,12 +38,14 @@ export type Project = {
   images: Photo[];
 };
 
+/** Display order: this is also the order of the homepage project reel. */
 export const projects: Project[] = [
   {
     slug: "contemporary-courtyard-home",
     name: "Contemporary Courtyard Home",
     category: "extensions",
     categoryLabel: "Courtyard Extension & Interior",
+    location: "Harold's Cross, Dublin 8",
     scope: "Glazed extension, joinery and bathrooms",
     summary:
       "A contemporary home arranged around a private courtyard, with frameless glazing, terrazzo floors and oak joinery throughout.",
@@ -65,10 +67,37 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "corner-glazed-extension-refurbishment",
+    name: "Corner-Glazed Extension & Refurbishment",
+    category: "extensions",
+    categoryLabel: "Two-Storey Extension & Refurbishment",
+    location: "Rathfarnham, Dublin",
+    scope: "Two-storey extension, kitchen and refurbishment",
+    summary:
+      "A two-storey extension with brick corner glazing beneath a rendered upper storey, alongside a refurbishment of the existing house.",
+    description: [
+      "At the back of the house, a new brick-built ground floor opens to the garden through floor-to-ceiling corner glazing, with a white rendered storey above that has a corner window of its own. A herringbone brick patio was laid outside the new doors.",
+      "Inside, the extension holds a navy Shaker kitchen with a white-topped island and brass pendant lights, on an oak floor.",
+      "The existing house was refurbished alongside the extension, including a living room with a period-style fireplace set against a navy feature wall. The build photos show the structural steel frame going in before the extension was closed in.",
+    ],
+    image: photos.cornerGlazedRear,
+    images: [
+      photos.cornerGlazedRear,
+      photos.cornerGlazedInterior,
+      photos.cornerGlazedKitchen,
+      photos.cornerGlazedFireplace,
+      photos.cornerGlazedPatio,
+      photos.cornerGlazedFront,
+      photos.cornerGlazedConstruction,
+      photos.cornerGlazedSteelFrame,
+    ],
+  },
+  {
     slug: "skylit-kitchen-extension",
     name: "Skylit Kitchen Extension",
     category: "extensions",
     categoryLabel: "Single-Storey Rear Extension",
+    location: "Clondalkin, Dublin",
     scope: "Rear extension, kitchen and landscaping",
     summary:
       "A single-storey rear extension housing a painted Shaker kitchen, with rooflights overhead and bifold doors opening onto a new patio.",
@@ -94,6 +123,7 @@ export const projects: Project[] = [
     name: "Sage Kitchen & Dining",
     category: "interiors",
     categoryLabel: "Kitchen & Dining Fit-Out",
+    location: "South Circular Road, Dublin",
     scope: "Kitchen fit-out and exposed joist ceiling",
     summary:
       "A sage green kitchen and dining space beneath exposed timber joists, with rooflights letting daylight in between the beams.",
@@ -111,10 +141,61 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "contemporary-single-storey-home",
+    name: "Contemporary Single-Storey Home",
+    category: "new-builds",
+    categoryLabel: "Single-Storey House",
+    location: "Sutton, Dublin",
+    scope: "Foundations, structure and finishes",
+    summary:
+      "A single-storey home in white render with black-framed glazing and decked terraces, followed from the foundations to the finished house.",
+    description: [
+      "This single-storey house is finished in crisp white render, with black-framed windows and glazed doors opening onto dark decked terraces. Wall lights wash the render after dark, and a palm stands in a raised rendered planter beside the steps.",
+      "The build photos follow the structure from the ground up: steel reinforcement laid for the foundations, concrete poured into formwork, blockwork walls rising with the window openings formed, and steel beams set over the top.",
+    ],
+    image: photos.suttonHomeNight,
+    images: [
+      photos.suttonHomeNight,
+      photos.suttonHomePlanterSteps,
+      photos.suttonHomeGlazedDoors,
+      photos.suttonHomeSideEntrance,
+      photos.suttonHomeFoundations,
+      photos.suttonHomeConcreteFormwork,
+      photos.suttonHomeBlockwork,
+      photos.suttonHomeSteelBeams,
+    ],
+  },
+  {
+    slug: "single-storey-garden-extension",
+    name: "Single-Storey Garden Extension",
+    category: "extensions",
+    categoryLabel: "Single-Storey Extension",
+    location: "Leixlip, Co. Kildare",
+    scope: "Rear extension, glazing and bespoke kitchen",
+    summary:
+      "A painted brick garden extension with a textured brick feature wall, a circular window and a bespoke oak kitchen.",
+    description: [
+      "This single-storey extension is built in brick and painted white, with full-width sliding glazing across the rear so the room opens directly onto the garden, and a circular porthole window set into the brickwork above brick-paved steps.",
+      "Inside, one wall is laid as a textured white brick feature running the length of the room. The ceiling joists are left exposed and painted, with a rooflight bringing in extra daylight.",
+      "The kitchen is bespoke oak joinery, with full-height doors concealing the larder storage, a range cooker and an oak island beneath pendant lights.",
+    ],
+    image: photos.gardenExtensionFeatureWall,
+    images: [
+      photos.gardenExtensionFeatureWall,
+      photos.gardenExtensionKitchenLiving,
+      photos.gardenExtensionOakKitchen,
+      photos.gardenExtensionPortholeWindow,
+      photos.singleStoreyExterior,
+      photos.singleStoreyInterior,
+      photos.singleStoreyKitchen,
+    ],
+  },
+  {
     slug: "open-plan-renovation",
     name: "Open-Plan Kitchen & Living",
     category: "renovations",
     categoryLabel: "Open-Plan Renovation",
+    location: "Artane, Dublin",
     scope: "Open-plan kitchen, living space and fireplace",
     summary:
       "An open-plan kitchen and living space with a vaulted ceiling, a handleless grey kitchen and a stone-clad feature fireplace.",
@@ -138,6 +219,7 @@ export const projects: Project[] = [
     name: "Two-Storey Rear Extension",
     category: "extensions",
     categoryLabel: "Two-Storey Extension",
+    location: "Rathfarnham, Dublin",
     scope: "Two-storey extension, kitchen and flooring",
     summary:
       "A two-storey rear extension with a zinc-clad canopy, opening into a bright Shaker kitchen and garden room on a herringbone oak floor.",
@@ -159,6 +241,7 @@ export const projects: Project[] = [
     name: "Brick & Slate New Build",
     category: "new-builds",
     categoryLabel: "New Build Residence",
+    location: "Clonskeagh, Dublin",
     scope: "New build, roof structure and slating",
     summary:
       "A brick-built new home finished with a natural slate roof and rooflights, photographed from the roof structure through to completion.",
@@ -173,22 +256,6 @@ export const projects: Project[] = [
       photos.newBuildSlateRoof,
       photos.newBuildBrickSlate,
     ],
-  },
-  {
-    slug: "single-storey-garden-extension",
-    name: "Single-Storey Garden Extension",
-    category: "extensions",
-    categoryLabel: "Single-Storey Extension",
-    scope: "Rear extension, glazing and bespoke kitchen",
-    summary:
-      "A painted brick rear extension with full-width sliding glazing, exposed joists and a circular window, fitted with a bespoke oak kitchen.",
-    description: [
-      "This single-storey extension is built in brick and painted white, with full-width sliding glazing across the rear so the room opens directly onto the garden.",
-      "Inside, the ceiling joists are left exposed and painted, with a rooflight bringing in extra daylight and a circular porthole window adding a distinctive detail.",
-      "The kitchen is bespoke oak joinery with full-height larder cupboards, deep drawers and a range cooker, shown here during fit-out.",
-    ],
-    image: photos.singleStoreyExterior,
-    images: [photos.singleStoreyExterior, photos.singleStoreyInterior, photos.singleStoreyKitchen],
   },
 ];
 

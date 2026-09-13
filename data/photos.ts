@@ -48,10 +48,34 @@ export const photos = {
   twoStoreyKitchenWide: photo("two-storey-extension-kitchen", "Shaker kitchen and herringbone floor in morning light"),
   twoStoreyGardenRoom: photo("two-storey-extension-garden-room", "Sunlit garden room with a herringbone oak floor"),
 
-  // Single-storey garden extension
+  // Single-storey garden extension, Leixlip
   singleStoreyExterior: { src: "/projects/house-b-exterior.jpg", alt: "Painted brick extension with full-width sliding glazing" },
   singleStoreyInterior: { src: "/projects/house-b-interior.jpg", alt: "Painted exposed joists, a rooflight and a circular window" },
   singleStoreyKitchen: { src: "/projects/house-b-kitchen.jpg", alt: "Bespoke oak kitchen with full-height larder units during fit-out" },
+  gardenExtensionFeatureWall: photo("garden-extension-brick-feature-wall", "Textured white brick feature wall beside an oak kitchen island"),
+  gardenExtensionKitchenLiving: photo("garden-extension-kitchen-living", "Open kitchen and living space with a textured brick wall and rooflight"),
+  gardenExtensionOakKitchen: photo("garden-extension-oak-kitchen", "Finished oak kitchen with full-height doors and a range cooker"),
+  gardenExtensionPortholeWindow: photo("garden-extension-porthole-window", "Circular window set into white brickwork above brick-paved steps"),
+
+  // Contemporary single-storey home, Sutton
+  suttonHomeNight: photo("single-storey-home-night", "Single-storey home lit at night, with wall lights along the white render"),
+  suttonHomeGlazedDoors: photo("single-storey-home-glazed-doors", "White rendered walls with black-framed glazed doors onto dark decking"),
+  suttonHomePlanterSteps: photo("single-storey-home-planter-steps", "Palm in a raised rendered planter beside the new steps"),
+  suttonHomeSideEntrance: photo("single-storey-home-side-entrance", "Glazed side entrance reached by decked steps"),
+  suttonHomeFoundations: photo("single-storey-home-foundations", "Steel reinforcement laid out for the foundations"),
+  suttonHomeConcreteFormwork: photo("single-storey-home-concrete-formwork", "Concrete poured into steel formwork, supported by props"),
+  suttonHomeBlockwork: photo("single-storey-home-blockwork", "Blockwork walls rising with the window openings formed"),
+  suttonHomeSteelBeams: photo("single-storey-home-steel-beams", "Steel beams set over the blockwork walls"),
+
+  // Two-storey extension and refurbishment, Rathfarnham
+  cornerGlazedRear: photo("corner-glazed-extension-rear", "Brick extension with corner glazing beneath a rendered upper storey"),
+  cornerGlazedInterior: photo("corner-glazed-extension-interior", "Floor-to-ceiling corner glazing looking out to the garden"),
+  cornerGlazedKitchen: photo("corner-glazed-extension-kitchen", "Navy Shaker kitchen with brass pendants and a white-topped island"),
+  cornerGlazedFireplace: photo("corner-glazed-extension-fireplace", "Period-style fireplace against a navy feature wall"),
+  cornerGlazedPatio: photo("corner-glazed-extension-herringbone-patio", "Herringbone brick patio laid outside the new glazing"),
+  cornerGlazedFront: photo("corner-glazed-extension-front", "Front of the house with a gated gravel driveway"),
+  cornerGlazedConstruction: photo("corner-glazed-extension-construction", "Rear extension under construction with the steel frame in place"),
+  cornerGlazedSteelFrame: photo("corner-glazed-extension-steel-frame", "Structural steel frame and timber studwork during the build"),
 
   // Brick and slate new build
   newBuildBrickSlate: photo("new-build-brick-slate", "Completed brick new build with a slate roof and rooflights"),

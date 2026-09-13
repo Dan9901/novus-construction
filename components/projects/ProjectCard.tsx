@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, MapPin } from "lucide-react";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { Badge } from "@/components/ui/Badge";
 import { useSpotlight } from "@/lib/useSpotlight";
@@ -41,6 +41,12 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
       </div>
       <div className="flex flex-1 flex-col gap-2 p-6">
         <h3 className="font-display text-xl font-medium tracking-tight">{project.name}</h3>
+        {project.location ? (
+          <span className="flex items-center gap-1.5 text-xs font-medium text-muted">
+            <MapPin className="h-3.5 w-3.5 shrink-0 text-accent" aria-hidden />
+            {project.location}
+          </span>
+        ) : null}
         <p className="flex-1 text-sm leading-relaxed text-muted">{project.summary}</p>
         <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground transition-colors group-hover:text-accent">
           View Project

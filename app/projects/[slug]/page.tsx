@@ -24,7 +24,9 @@ export async function generateMetadata({
   if (!project) return {};
 
   return {
-    title: `${project.name} — ${project.categoryLabel}`,
+    title: project.location
+      ? `${project.name}, ${project.location} — ${project.categoryLabel}`
+      : `${project.name} — ${project.categoryLabel}`,
     description: project.summary,
     openGraph: { images: [project.image.src] },
   };

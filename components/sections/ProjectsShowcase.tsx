@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion, useScroll, useSpring, useTransform } from "motion/react";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, MapPin } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { GrainOverlay } from "@/components/ui/GrainOverlay";
@@ -11,7 +11,14 @@ import { Button } from "@/components/ui/Button";
 import { useMediaQuery } from "@/lib/useMediaQuery";
 import { projectCategoryPlaceholder, projects, type Project } from "@/data/projects";
 
-const featured = projects.slice(0, 5);
+const featured = projects;
+
+/**
+ * Pinned length grows with the reel so the sideways pace stays constant as
+ * projects are added: roughly 46vh of vertical scroll per panel, plus one
+ * screen for the section itself.
+ */
+const PINNED_HEIGHT = `${100 + featured.length * 46}vh`;
 
 function ProjectPanel({ project, index }: { project: Project; index: number }) {
   return (
@@ -43,6 +50,12 @@ function ProjectPanel({ project, index }: { project: Project; index: number }) {
           <h3 className="mt-1.5 font-display text-2xl font-medium tracking-tight text-background">
             {project.name}
           </h3>
+          {project.location ? (
+            <span className="mt-1.5 flex items-center gap-1.5 text-xs text-background/70">
+              <MapPin className="h-3 w-3 shrink-0" aria-hidden />
+              {project.location}
+            </span>
+          ) : null}
           <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-background/80 transition-colors group-hover:text-accent-tint">
             View Project
             <ArrowUpRight
@@ -107,7 +120,12 @@ function PinnedReel() {
   const progressScale = useTransform(smooth, [0, 1], [0.04, 1]);
 
   return (
-    <section ref={sectionRef} className="relative h-[340vh] bg-foreground">
+    <section
+      ref={sectionRef}
+      data-reel="pinned"
+      className="relative bg-foreground"
+      style={{ height: PINNED_HEIGHT }}
+    >
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <GrainOverlay />
         <motion.div

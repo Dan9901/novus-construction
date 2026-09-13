@@ -2,12 +2,13 @@
 
 import { useRef } from "react";
 import dynamic from "next/dynamic";
-import { Phone } from "lucide-react";
+import { ArrowUpRight, Phone } from "lucide-react";
 import { motion, useScroll, useTransform, type Variants } from "motion/react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { AnimatedNumber } from "@/components/ui/AnimatedNumber";
 import { SplitText } from "@/components/ui/SplitText";
+import { GoogleGlyph } from "@/components/icons/SocialIcons";
 import { siteConfig } from "@/data/site-config";
 
 const HeroScene = dynamic(() => import("@/components/three/HeroScene").then((m) => m.HeroScene), {
@@ -98,6 +99,28 @@ export function Hero() {
             <Button href="/projects" variant="outline" size="lg">
               View Our Work
             </Button>
+          </motion.div>
+
+          <motion.div variants={item} className="mt-5">
+            <a
+              href={siteConfig.googleReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2.5 text-sm text-muted transition-colors hover:text-foreground"
+            >
+              <GoogleGlyph className="h-4 w-4 shrink-0" />
+              <span>
+                Worked with us?{" "}
+                <span className="font-semibold text-foreground underline decoration-border decoration-1 underline-offset-4 transition-colors group-hover:decoration-accent">
+                  Leave a Google review
+                </span>
+              </span>
+              <ArrowUpRight
+                className="h-3.5 w-3.5 shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                aria-hidden
+              />
+              <span className="sr-only">(opens in a new tab)</span>
+            </a>
           </motion.div>
 
           <motion.div

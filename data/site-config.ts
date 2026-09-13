@@ -16,4 +16,5 @@ export const siteConfig = {
     { value: "55+", label: "Projects Completed" },
   ],
   googleProfileUrl: "https://share.google/SZ1EKUDrQX8BswB33",
+  googleReviewUrl: "https://g.page/r/Cb5D1bcTgL_GEBM/review",
 } as const;

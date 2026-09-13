@@ -50,3 +50,8 @@ House B.jpg
 House B - Interior.jpg
 House B - Kitchen.jpg
 Working Photos/
+# Per-project camera originals. These carry GPS coordinates of clients' homes,
+# so they must never be committed — only the stripped copies in public/photos.
+leixlip- single storey garden extension/
+Sutton - single storey house/
+rathfarnam - 2 storey extension - refurb/
