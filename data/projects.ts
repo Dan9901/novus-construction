@@ -72,7 +72,7 @@ export const projects: Project[] = [
     category: "extensions",
     categoryLabel: "Two-Storey Extension & Refurbishment",
     location: "Rathfarnham, Dublin",
-    scope: "Two-storey extension, kitchen and refurbishment",
+    scope: "Two-storey extension, corner glazing and refurbishment",
     summary:
       "A two-storey extension with brick corner glazing beneath a rendered upper storey, alongside a refurbishment of the existing house.",
     description: [
@@ -98,7 +98,7 @@ export const projects: Project[] = [
     category: "extensions",
     categoryLabel: "Single-Storey Rear Extension",
     location: "Clondalkin, Dublin",
-    scope: "Rear extension, kitchen and landscaping",
+    scope: "Rear extension, rooflights and landscaping",
     summary:
       "A single-storey rear extension housing a painted Shaker kitchen, with rooflights overhead and bifold doors opening onto a new patio.",
     description: [
@@ -122,9 +122,9 @@ export const projects: Project[] = [
     slug: "sage-kitchen-dining",
     name: "Sage Kitchen & Dining",
     category: "interiors",
-    categoryLabel: "Kitchen & Dining Fit-Out",
+    categoryLabel: "Kitchen & Dining Renovation",
     location: "South Circular Road, Dublin",
-    scope: "Kitchen fit-out and exposed joist ceiling",
+    scope: "Interior renovation and exposed joist ceiling",
     summary:
       "A sage green kitchen and dining space beneath exposed timber joists, with rooflights letting daylight in between the beams.",
     description: [
@@ -171,7 +171,7 @@ export const projects: Project[] = [
     category: "extensions",
     categoryLabel: "Single-Storey Extension",
     location: "Leixlip, Co. Kildare",
-    scope: "Rear extension, glazing and bespoke kitchen",
+    scope: "Rear extension, glazing and feature brickwork",
     summary:
       "A painted brick garden extension with a textured brick feature wall, a circular window and a bespoke oak kitchen.",
     description: [
@@ -196,7 +196,7 @@ export const projects: Project[] = [
     category: "renovations",
     categoryLabel: "Open-Plan Renovation",
     location: "Artane, Dublin",
-    scope: "Open-plan kitchen, living space and fireplace",
+    scope: "Open-plan reconfiguration, vaulted ceiling and fireplace",
     summary:
       "An open-plan kitchen and living space with a vaulted ceiling, a handleless grey kitchen and a stone-clad feature fireplace.",
     description: [
@@ -220,7 +220,7 @@ export const projects: Project[] = [
     category: "extensions",
     categoryLabel: "Two-Storey Extension",
     location: "Rathfarnham, Dublin",
-    scope: "Two-storey extension, kitchen and flooring",
+    scope: "Two-storey extension, zinc canopy and flooring",
     summary:
       "A two-storey rear extension with a zinc-clad canopy, opening into a bright Shaker kitchen and garden room on a herringbone oak floor.",
     description: [

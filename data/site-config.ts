@@ -3,7 +3,7 @@ export const siteConfig = {
   shortName: "Novus",
   tagline: "Building the Future, Restoring the Past",
   description:
-    "Novus Construction Ltd is a Dublin-based building contractor offering design and planning, construction services, kitchen fit-outs, structural engineering and SEAI-registered grant works for homeowners across Ireland.",
+    "Novus Construction Ltd is a Dublin-based building contractor offering design and planning, construction services, extensions and renovations, structural engineering and SEAI-registered grant works for homeowners across Ireland.",
   url: "https://www.novusconstruction.ie",
   phoneDisplay: "+353 87 993 2349",
   phoneHref: "tel:+353879932349",

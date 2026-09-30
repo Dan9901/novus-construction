@@ -51,7 +51,7 @@ export const photos = {
   // Single-storey garden extension, Leixlip
   singleStoreyExterior: { src: "/projects/house-b-exterior.jpg", alt: "Painted brick extension with full-width sliding glazing" },
   singleStoreyInterior: { src: "/projects/house-b-interior.jpg", alt: "Painted exposed joists, a rooflight and a circular window" },
-  singleStoreyKitchen: { src: "/projects/house-b-kitchen.jpg", alt: "Bespoke oak kitchen with full-height larder units during fit-out" },
+  singleStoreyKitchen: { src: "/projects/house-b-kitchen.jpg", alt: "Bespoke oak kitchen with full-height larder units" },
   gardenExtensionFeatureWall: photo("garden-extension-brick-feature-wall", "Textured white brick feature wall beside an oak kitchen island"),
   gardenExtensionKitchenLiving: photo("garden-extension-kitchen-living", "Open kitchen and living space with a textured brick wall and rooflight"),
   gardenExtensionOakKitchen: photo("garden-extension-oak-kitchen", "Finished oak kitchen with full-height doors and a range cooker"),

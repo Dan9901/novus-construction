@@ -10,7 +10,7 @@ import { services } from "@/data/services";
 export const metadata: Metadata = {
   title: "Construction Services",
   description:
-    "Design and planning, construction services, kitchen fit-outs, structural engineering and SEAI grant works from Novus Construction Ltd.",
+    "Design and planning, construction services, extensions and renovations, structural engineering and SEAI grant works from Novus Construction Ltd.",
 };
 
 export default function ServicesPage() {

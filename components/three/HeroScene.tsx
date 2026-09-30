@@ -85,7 +85,7 @@ function CycleDriver({
 
 /**
  * The hero's 3D centrepiece: a rolling set of blueprint drawings — a new build,
- * a rear extension and a kitchen fit-out — each erecting itself stage by stage
+ * a rear extension and an open-plan interior — each erecting itself stage by stage
  * before handing over to the next. Renders nothing without WebGL.
  */
 export function HeroScene() {

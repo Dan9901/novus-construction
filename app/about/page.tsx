@@ -52,10 +52,10 @@ export default function AboutPage() {
                   house too, making sure your unique vision is immediately visible.
                 </p>
                 <p className="text-base leading-relaxed text-foreground-soft">
-                  We&apos;ve been designing, creating and building some of the most beautiful
-                  kitchens on the Irish market for years, and thanks to our many satisfied clients
-                  we continue to grow as a company — while remaining a small, owner-led team by
-                  choice.
+                  Our work spans new builds, extensions, renovations and full property
+                  refurbishments for homeowners across Dublin and the surrounding counties, and
+                  thanks to our many satisfied clients we continue to grow as a company — while
+                  remaining a small, owner-led team by choice.
                 </p>
                 <p className="text-base leading-relaxed text-foreground-soft">
                   Our story began when we realised people wanted not just something functional,

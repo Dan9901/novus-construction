@@ -103,17 +103,17 @@ export const services: Service[] = [
     slug: "kitchens",
     title: "Kitchens & Interiors",
     shortDescription:
-      "The kitchen is for more than cooking — our fit-outs always reflect that this space is the hub of the home.",
+      "The kitchen is the hub of the home — and the room most of our extensions and renovations are centred on.",
     description: [
-      "The kitchen is for more than cooking, and our fit-outs always reflect that this space is the hub of the home. It's the first room everyone wants to see when entering a home, and a space for family bonding — so we design it with your style and personality in mind.",
-      "Every kitchen we fit is designed to be both functional and beautiful.",
+      "The kitchen is for more than cooking. It's the first room everyone wants to see when entering a home, and a space for family bonding — which is why so many of the projects in our portfolio are centred on it, and why the photographs below are worth a look.",
+      "Our part is the building work the space depends on: the structural opening that turns separate rooms into one, the floors, walls and ceilings, the tiling and the first-fix electrics and plumbing behind them — all coordinated with your kitchen supplier so that everything lands exactly where it needs to.",
     ],
     includes: [
-      "Kitchen strip-out and installation",
       "Structural openings and steel beams",
-      "Tiling, flooring and worktops",
+      "Walls, floors and ceilings for a new layout",
+      "Tiling, flooring and rooflights",
       "Electrical and plumbing first fix",
-      "Coordination with kitchen suppliers",
+      "Coordination with kitchen suppliers and fitters",
     ],
     placeholderCategory: "kitchen",
     placeholderTag: "Kitchen",

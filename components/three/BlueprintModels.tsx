@@ -232,9 +232,9 @@ function ExtensionModel({ build }: { build: BuildProgress }) {
   );
 }
 
-/* ── Drawing 03 — Kitchen fit-out ───────────────────────────────────────── */
+/* ── Drawing 03 — Open-plan interior ────────────────────────────────────── */
 
-function KitchenModel({ build }: { build: BuildProgress }) {
+function InteriorModel({ build }: { build: BuildProgress }) {
   return (
     <>
       {/* floor plate and the two walls that define the corner */}
@@ -334,18 +334,18 @@ export const MODELS: BlueprintModel[] = [
     Component: ExtensionModel,
   },
   {
-    id: "kitchen",
-    label: "Kitchen Fit-Out",
+    id: "interior",
+    label: "Open-Plan Interior",
     offset: [0, -1.18, 0],
     scale: 1.24,
     stages: [
       { at: 0, label: "Floor Plan" },
-      { at: 0.24, label: "Units" },
-      { at: 0.46, label: "Worktops" },
-      { at: 0.68, label: "Island" },
+      { at: 0.24, label: "Layout" },
+      { at: 0.46, label: "Surfaces" },
+      { at: 0.68, label: "Lighting" },
       { at: 0.99, label: "Complete" },
     ],
-    Component: KitchenModel,
+    Component: InteriorModel,
   },
 ];
 
